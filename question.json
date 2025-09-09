@@ -6,28 +6,34 @@
     "explanation": "Red is one of the three traditional primary colors (red, yellow, blue)."
   },
   {
+    "question": "What are the primary colors?",
+    "options": ["Red, Yellow, Blue", "Green, Orange, Purple", "Red, Green, Blue", "Black, White, Grey"],
+    "answer": 0,
+    "explanation": "The traditional primary colors used in art are red, yellow, and blue. These cannot be created by mixing other colors."
+  },
+  {
     "question": "What color do you get when you mix yellow and blue?",
     "options": ["Orange", "Purple", "Green", "Brown"],
     "answer": 2,
-    "explanation": "Yellow and blue are primary colors; mixing them produces the secondary color green. :contentReference[oaicite:0]{index=0}"
+    "explanation": "Yellow and blue are primary colors"
   },
   {
     "question": "What color is formed by mixing red and yellow?",
     "options": ["Green", "Orange", "Purple", "Grey"],
     "answer": 1,
-    "explanation": "Red and yellow mix to form the secondary color orange. :contentReference[oaicite:1]{index=1}"
+    "explanation": "Red and yellow mix to form the secondary color orange. "
   },
   {
     "question": "What color results from combining red and blue?",
     "options": ["Green", "Orange", "Yellow", "Purple"],
     "answer": 3,
-    "explanation": "Mixing red and blue (primary colors) yields the secondary color purple. :contentReference[oaicite:2]{index=2}"
+    "explanation": "Mixing red and blue (primary colors) yields the secondary color purple. "
   },
   {
     "question": "If you mix all three primary colors (red, yellow, blue), what is the likely result?",
     "options": ["Bright green", "Vivid pink", "Muddy brown", "Clean white"],
     "answer": 2,
-    "explanation": "Combining all three traditional primaries typically yields a muddy brown shade. :contentReference[oaicite:3]{index=3}"
+    "explanation": "Combining all three traditional primaries typically yields a muddy brown shade. "
   },
   {
     "question": "Which do you smell when smelling a fresh rose?",
@@ -51,25 +57,25 @@
     "question": "Which phase of matter has a definite shape and volume?",
     "options": ["Solid", "Liquid", "Gas", "Plasma"],
     "answer": 0,
-    "explanation": "Solids maintain a definite shape and volume. :contentReference[oaicite:4]{index=4}"
+    "explanation": "Solids maintain a definite shape and volume. "
   },
   {
     "question": "Which phase of matter takes the shape of its container but has a definite volume?",
     "options": ["Solid", "Liquid", "Gas", "Plasma"],
     "answer": 1,
-    "explanation": "Liquids conform to their container’s shape but retain a definite volume. :contentReference[oaicite:5]{index=5}"
+    "explanation": "Liquids conform to their container’s shape but retain a definite volume. "
   },
   {
     "question": "Which phase of matter has neither a definite shape nor volume?",
     "options": ["Solid", "Liquid", "Gas", "Plasma"],
     "answer": 2,
-    "explanation": "Gases expand freely, having neither definite shape nor volume. :contentReference[oaicite:6]{index=6}"
+    "explanation": "Gases expand freely, having neither definite shape nor volume. "
   },
   {
     "question": "Which of these is not a typical phase of matter?",
     "options": ["Solid", "Plasma", "Crystal", "Gas"],
     "answer": 2,
-    "explanation": "‘Crystal’ is a structure, not a phase; typical phases include solid, liquid, gas, plasma. :contentReference[oaicite:7]{index=7}"
+    "explanation": "‘Crystal’ is a structure, not a phase; typical phases include solid, liquid, gas, plasma. "
   },
   {
     "question": "What is the process called when ice turns into water?",
@@ -81,7 +87,7 @@
     "question": "What is it called when water vapor turns into liquid water?",
     "options": ["Evaporation", "Sublimation", "Condensation", "Freezing"],
     "answer": 2,
-    "explanation": "Condensation is the phase change from gas to liquid. :contentReference[oaicite:8]{index=8}"
+    "explanation": "Condensation is the phase change from gas to liquid. "
   },
   {
     "question": "When water freezes into ice, this phase change is called ____.",
@@ -93,7 +99,7 @@
     "question": "When ice turns directly into water vapor, bypassing liquid, it’s called ____.",
     "options": ["Condensation", "Sublimation", "Deposition", "Evaporation"],
     "answer": 1,
-    "explanation": "Sublimation is the transition directly from solid to gas. :contentReference[oaicite:9]{index=9}"
+    "explanation": "Sublimation is the transition directly from solid to gas. "
   },
   {
     "question": "How should you handle a gas in a sealed container?",
@@ -171,6 +177,6 @@
     "question": "What phase change occurs when water boils and becomes steam?",
     "options": ["Freezing", "Condensation", "Evaporation", "Melting"],
     "answer": 2,
-    "explanation": "Evaporation (or boiling) is the change from liquid to gas. :contentReference[oaicite:10]{index=10}"
+    "explanation": "Evaporation (or boiling) is the change from liquid to gas. "
   }
 ]
