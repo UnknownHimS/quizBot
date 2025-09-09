@@ -54,28 +54,28 @@
     "explanation": "Clean water is typically odorless."
   },
   {
-    "question": "Which phase of matter has a definite shape and volume?",
+    "question": "Which type of matter keeps its shape and size?",
     "options": ["Solid", "Liquid", "Gas", "Plasma"],
     "answer": 0,
-    "explanation": "Solids maintain a definite shape and volume. "
+    "explanation": "Solids stay the same shape and size. They don’t change unless you force them."
   },
   {
-    "question": "Which phase of matter takes the shape of its container but has a definite volume?",
+    "question": "Which type of matter changes shape but keeps the same amount?",
     "options": ["Solid", "Liquid", "Gas", "Plasma"],
     "answer": 1,
-    "explanation": "Liquids conform to their container’s shape but retain a definite volume. "
+    "explanation": "Liquids take the shape of the container but keep the same amount inside."
   },
   {
-    "question": "Which phase of matter has neither a definite shape nor volume?",
+    "question": "Which type of matter changes both shape and size?",
     "options": ["Solid", "Liquid", "Gas", "Plasma"],
     "answer": 2,
-    "explanation": "Gases expand freely, having neither definite shape nor volume. "
+    "explanation": "Gases fill all the space they can. They don’t have a fixed shape or size."
   },
   {
-    "question": "Which of these is not a typical phase of matter?",
+    "question": "Which one is not a normal type of matter?",
     "options": ["Solid", "Plasma", "Crystal", "Gas"],
     "answer": 2,
-    "explanation": "‘Crystal’ is a structure, not a phase; typical phases include solid, liquid, gas, plasma. "
+    "explanation": "A crystal is a kind of solid, not a basic type of matter like solid, liquid, gas, or plasma."
   },
   {
     "question": "What is the process called when ice turns into water?",
