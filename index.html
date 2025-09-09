@@ -4,183 +4,186 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Interactive Math Quiz</title>
- <style>
-  body {
-    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=90');
-    background-size: cover;
-    background-position: center;
-    font-family: Arial, sans-serif;
-    padding: 20px 15px;
-    margin: 0;
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    box-shadow: 0px 0px 5px;
-    color: white;
-    text-shadow: 0 0 5px rgba(0,0,0,0.7);
-    max-width: 600px;
-    width: 90%;
-  }
-
-  #quiz {
-    width: 100%;
-    max-width: 600px;
-  }
-
-  .question-box {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 20px 25px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
-    margin-bottom: 20px;
-    word-wrap: break-word;
-  }
-
-  .question-box h2 {
-    font-size: 1.3rem;
-  }
-
-  .option {
-    display: block;
-    margin: 10px 0;
-    cursor: pointer;
-    font-size: 1.1rem;
-  }
-
-  button {
-    display: block;
-    margin: 20px auto 0;
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    background-color: #007bff;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    max-width: 200px;
-    width: 90%;
-  }
-
-  button:disabled {
-    background-color: #999;
-    cursor: not-allowed;
-  }
-
-  button:hover:not(:disabled) {
-    background-color: #0056b3;
-  }
-
-  #explanation {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: black;
-    max-width: 600px;
-    width: 90%;
-  }
-
-  #gifContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
-    max-width: 600px;
-    width: 90%;
-    box-shadow:0px 0px 15px green;
-  }
-
-  #gifContainer img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-
-  #result {
-    font-weight: bold;
-    font-size: 1.3rem;
-    margin-top: 30px;
-    text-align: center;
-    color: green;
-    max-width: 600px;
-    width: 90%;
-  }
-
-  /* Responsive typography and spacing */
-  @media (max-width: 768px) {
+  <style>
     body {
-      padding: 15px 10px;
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=90');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      padding: 20px 15px;
+      margin: 0;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     h1 {
-      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 20px;
+      box-shadow: 0px 0px 5px;
+      color: white;
+      text-shadow: 0 0 5px rgba(0,0,0,0.7);
+      max-width: 600px;
+      width: 90%;
+    }
+
+    #mainContent {
+      width: 100%;
+      max-width: 600px;
+      transition: opacity 0.5s ease;
+    }
+
+    #mainContent.dimmed {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .question-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px 25px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+      word-wrap: break-word;
     }
 
     .question-box h2 {
+      font-size: 1.3rem;
+    }
+
+    .option {
+      display: block;
+      margin: 10px 0;
+      cursor: pointer;
       font-size: 1.1rem;
     }
 
-    .option {
-      font-size: 1rem;
+    button {
+      display: block;
+      margin: 20px auto 0;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      background-color: #007bff;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      max-width: 200px;
+      width: 90%;
     }
 
-    button {
-      font-size: 1rem;
-      max-width: 180px;
+    button:disabled {
+      background-color: #999;
+      cursor: not-allowed;
+    }
+
+    button:hover:not(:disabled) {
+      background-color: #0056b3;
+    }
+
+    #explanation, #result {
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+      margin-top: 25px;
+      font-weight: 600;
+      color: #2a2a2a;
     }
 
     #explanation {
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
     #result {
-      font-size: 1.2rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+      color: green;
     }
 
-    .question-box h2 {
-      font-size: 1rem;
+    #gifContainer {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+      max-width: 600px;
+      width: 90%;
     }
 
-    .option {
-      font-size: 0.9rem;
+    #gifContainer img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
     }
 
-    button {
-      font-size: 0.95rem;
-      max-width: 160px;
+    /* Responsive typography and spacing */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px 10px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .question-box h2 {
+        font-size: 1.1rem;
+      }
+
+      .option {
+        font-size: 1rem;
+      }
+
+      button {
+        font-size: 1rem;
+        max-width: 180px;
+      }
+
+      #explanation {
+        font-size: 1rem;
+      }
+
+      #result {
+        font-size: 1.2rem;
+      }
     }
 
-    #explanation {
-      font-size: 0.95rem;
-    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
 
-    #result {
-      font-size: 1rem;
-    }
-  }
-</style>
+      .question-box h2 {
+        font-size: 1rem;
+      }
 
+      .option {
+        font-size: 0.9rem;
+      }
+
+      button {
+        font-size: 0.95rem;
+        max-width: 160px;
+      }
+
+      #explanation {
+        font-size: 0.95rem;
+      }
+
+      #result {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <h1>🧠 Interactive Math Quiz</h1>
 
-  <div id="quiz"></div>
-
-  <button id="nextBtn">Next</button>
+  <div id="mainContent">
+    <div id="quiz"></div>
+    <button id="nextBtn">Next</button>
+  </div>
 
   <div id="gifContainer"></div>
   <div id="explanation"></div>
@@ -197,6 +200,7 @@
     const explanationDiv = document.getElementById('explanation');
     const gifContainer = document.getElementById('gifContainer');
     const resultDiv = document.getElementById('result');
+    const mainContent = document.getElementById('mainContent');
 
     nextBtn.disabled = true; // Disabled until question loads and option selected
 
@@ -216,6 +220,8 @@
       resultDiv.textContent = '';
       nextBtn.disabled = true;
       isShowingExplanation = false;
+
+      mainContent.classList.remove('dimmed');
 
       const q = questions[currentQuestionIndex];
       quizContainer.innerHTML = `
@@ -243,6 +249,8 @@
       explanationDiv.textContent = explanation;
       gifContainer.innerHTML = `<img src="${gif}" alt="Explanation GIF" />`;
       nextBtn.disabled = true;
+
+      mainContent.classList.add('dimmed');
     }
 
     nextBtn.addEventListener('click', () => {
@@ -266,7 +274,7 @@
           endQuiz();
         }
       } else {
-        // Show explanation with GIF, then proceed automatically
+        // Show explanation with GIF, then proceed automatically after 10 seconds
         const { explanation, gif } = questions[currentQuestionIndex];
         showExplanation(explanation, gif);
 
@@ -277,7 +285,7 @@
           } else {
             endQuiz();
           }
-        }, 5000); // 5 seconds delay for explanation
+        }, 10000); // 10 seconds delay for explanation
       }
 
       nextBtn.disabled = true;
