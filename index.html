@@ -104,6 +104,10 @@
       color: green;
       margin-top: 20px;
     }
+
+    audio {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -119,6 +123,8 @@
   <div id="explanation"></div>
   <div id="result"></div>
 
+  <audio id="audioPlayer" preload="auto"></audio>
+
   <script>
     let questions = [];
     let currentQuestionIndex = 0;
@@ -131,6 +137,7 @@
     const gifContainer = document.getElementById('gifContainer');
     const resultDiv = document.getElementById('result');
     const mainContent = document.getElementById('mainContent');
+    const audioPlayer = document.getElementById('audioPlayer');
 
     nextBtn.disabled = true;
 
@@ -174,16 +181,21 @@
       });
     }
 
-    function showExplanation(explanation, gif) {
+    function showExplanation(explanation, gif, audio) {
       isShowingExplanation = true;
 
       mainContent.classList.add('hidden'); // Hide quiz content
 
       explanationDiv.textContent = explanation;
-      gifContainer.innerHTML = `<img src="${gif}" alt="Explanation GIF" />`;
+      gifContainer.innerHTML = gif ? `<img src="${gif}" alt="Explanation GIF" />` : '';
 
       explanationDiv.classList.add('show');
       gifContainer.classList.add('show');
+
+      if (audio) {
+        audioPlayer.src = audio;
+        audioPlayer.play();
+      }
 
       nextBtn.disabled = true;
     }
@@ -209,8 +221,8 @@
           endQuiz();
         }
       } else {
-        const { explanation, gif } = questions[currentQuestionIndex];
-        showExplanation(explanation, gif);
+        const { explanation, gif, audio } = questions[currentQuestionIndex];
+        showExplanation(explanation, gif, audio);
 
         setTimeout(() => {
           currentQuestionIndex++;
