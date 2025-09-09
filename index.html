@@ -100,7 +100,7 @@
 
     async function loadQuestions() {
       try {
-        const res = await fetch('questions.json');
+        const res = await fetch('question.json');
         questions = await res.json();
         showQuestion();
       } catch (error) {
