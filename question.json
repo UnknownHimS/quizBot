@@ -1,92 +1,176 @@
 [
   {
-    "question": "What is 5 + 3?",
-    "options": ["6", "7", "8", "9"],
+    "question": "Which of the following is a primary color?",
+    "options": ["Green", "Purple", "Red", "Orange"],
     "answer": 2,
-    "explanation": "5 plus 3 equals 8 because you add 5 and 3 together to get 8.",
-    "gif": "https://media1.tenor.com/m/K3_058vxAdkAAAAC/uncanny-valley-cat-speaking-cat.gif",
-    "audio": "https://raw.githubusercontent.com/UnknownHimS/quizBot/main/catmeowing.mp3"
-
+    "explanation": "Red is one of the three traditional primary colors (red, yellow, blue)."
   },
   {
-    "question": "What is 10 - 4?",
-    "options": ["6", "5", "4", "7"],
-    "answer": 0,
-    "explanation": "10 minus 4 equals 6 because subtracting 4 from 10 leaves 6.",
-    "gif": "https://media1.tenor.com/m/K3_058vxAdkAAAAC/uncanny-valley-cat-speaking-cat.gif",
-    "audio": "https://raw.githubusercontent.com/UnknownHimS/quizBot/main/catmeowing.mp3"
-
+    "question": "What color do you get when you mix yellow and blue?",
+    "options": ["Orange", "Purple", "Green", "Brown"],
+    "answer": 2,
+    "explanation": "Yellow and blue are primary colors; mixing them produces the secondary color green. :contentReference[oaicite:0]{index=0}"
   },
   {
-    "question": "What is 7 x 2?",
-    "options": ["12", "14", "16", "10"],
+    "question": "What color is formed by mixing red and yellow?",
+    "options": ["Green", "Orange", "Purple", "Grey"],
     "answer": 1,
-    "explanation": "7 multiplied by 2 is 14, which is 7 added twice.",
-    "gif": "https://media1.tenor.com/m/K3_058vxAdkAAAAC/uncanny-valley-cat-speaking-cat.gif",
-    "audio": "https://raw.githubusercontent.com/UnknownHimS/quizBot/main/catmeowing.mp3"
-
+    "explanation": "Red and yellow mix to form the secondary color orange. :contentReference[oaicite:1]{index=1}"
   },
   {
-    "question": "What is 12 ÷ 4?",
-    "options": ["2", "4", "3", "5"],
+    "question": "What color results from combining red and blue?",
+    "options": ["Green", "Orange", "Yellow", "Purple"],
+    "answer": 3,
+    "explanation": "Mixing red and blue (primary colors) yields the secondary color purple. :contentReference[oaicite:2]{index=2}"
+  },
+  {
+    "question": "If you mix all three primary colors (red, yellow, blue), what is the likely result?",
+    "options": ["Bright green", "Vivid pink", "Muddy brown", "Clean white"],
     "answer": 2,
-    "explanation": "12 divided by 4 equals 3, because 4 goes into 12 exactly 3 times.",
-    "gif": "https://media1.tenor.com/m/K3_058vxAdkAAAAC/uncanny-valley-cat-speaking-cat.gif",
-    "audio": "https://raw.githubusercontent.com/UnknownHimS/quizBot/main/catmeowing.mp3"
-
+    "explanation": "Combining all three traditional primaries typically yields a muddy brown shade. :contentReference[oaicite:3]{index=3}"
   },
   {
-    "question": "What is 9 + 6?",
-    "options": ["14", "15", "13", "16"],
+    "question": "Which do you smell when smelling a fresh rose?",
+    "options": ["Good smell", "Bad smell", "Odorless", "Spicy smell"],
+    "answer": 0,
+    "explanation": "A fresh rose usually emits a pleasant, good smell."
+  },
+  {
+    "question": "What type of smell do rotten eggs generally have?",
+    "options": ["Good smell", "Bad smell", "Odorless", "Sweet smell"],
     "answer": 1,
-    "explanation": "9 plus 6 equals 15, by adding the two numbers.",
-    "gif": "https://media1.tenor.com/m/K3_058vxAdkAAAAC/uncanny-valley-cat-speaking-cat.gif",
-    "audio": "https://raw.githubusercontent.com/UnknownHimS/quizBot/main/catmeowing.mp3"
-
+    "explanation": "Rotten eggs have a bad, sulphurous smell."
   },
   {
-    "question": "What is 15 - 7?",
-    "options": ["8", "9", "7", "6"],
-    "answer": 0,
-    "explanation": "15 minus 7 is 8 because you subtract 7 from 15.",
-    "gif": "https://media1.tenor.com/m/K3_058vxAdkAAAAC/uncanny-valley-cat-speaking-cat.gif",
-    "audio": "https://raw.githubusercontent.com/UnknownHimS/quizBot/main/catmeowing.mp3"
-
-  },
-  {
-    "question": "What is 3 x 5?",
-    "options": ["15", "10", "8", "12"],
-    "answer": 0,
-    "explanation": "3 multiplied by 5 is 15, as multiplication is repeated addition.",
-    "gif": "https://media1.tenor.com/m/K3_058vxAdkAAAAC/uncanny-valley-cat-speaking-cat.gif",
-    "audio": "https://raw.githubusercontent.com/UnknownHimS/quizBot/main/catmeowing.mp3"
-
-  },
-  {
-    "question": "What is 20 ÷ 5?",
-    "options": ["2", "3", "4", "5"],
+    "question": "How would you describe the smell of clean water?",
+    "options": ["Good smell", "Bad smell", "Odorless", "Fruity smell"],
     "answer": 2,
-    "explanation": "20 divided by 5 equals 4, since 5 fits into 20 four times.",
-    "gif": "https://media1.tenor.com/m/K3_058vxAdkAAAAC/uncanny-valley-cat-speaking-cat.gif",
-    "audio": "https://raw.githubusercontent.com/UnknownHimS/quizBot/main/catmeowing.mp3"
-
+    "explanation": "Clean water is typically odorless."
   },
   {
-    "question": "What is 8 + 7?",
-    "options": ["15", "14", "16", "13"],
+    "question": "Which phase of matter has a definite shape and volume?",
+    "options": ["Solid", "Liquid", "Gas", "Plasma"],
     "answer": 0,
-    "explanation": "8 plus 7 equals 15 by adding the two numbers.",
-    "gif": "https://media1.tenor.com/m/K3_058vxAdkAAAAC/uncanny-valley-cat-speaking-cat.gif",
-    "audio": "https://raw.githubusercontent.com/UnknownHimS/quizBot/main/catmeowing.mp3"
-
+    "explanation": "Solids maintain a definite shape and volume. :contentReference[oaicite:4]{index=4}"
   },
   {
-    "question": "What is 14 - 6?",
-    "options": ["7", "9", "8", "6"],
+    "question": "Which phase of matter takes the shape of its container but has a definite volume?",
+    "options": ["Solid", "Liquid", "Gas", "Plasma"],
+    "answer": 1,
+    "explanation": "Liquids conform to their container’s shape but retain a definite volume. :contentReference[oaicite:5]{index=5}"
+  },
+  {
+    "question": "Which phase of matter has neither a definite shape nor volume?",
+    "options": ["Solid", "Liquid", "Gas", "Plasma"],
     "answer": 2,
-    "explanation": "14 minus 6 equals 8 because you subtract 6 from 14.",
-    "gif": "https://media1.tenor.com/m/K3_058vxAdkAAAAC/uncanny-valley-cat-speaking-cat.gif",
-    "audio": "https://raw.githubusercontent.com/UnknownHimS/quizBot/main/catmeowing.mp3"
-
+    "explanation": "Gases expand freely, having neither definite shape nor volume. :contentReference[oaicite:6]{index=6}"
+  },
+  {
+    "question": "Which of these is not a typical phase of matter?",
+    "options": ["Solid", "Plasma", "Crystal", "Gas"],
+    "answer": 2,
+    "explanation": "‘Crystal’ is a structure, not a phase; typical phases include solid, liquid, gas, plasma. :contentReference[oaicite:7]{index=7}"
+  },
+  {
+    "question": "What is the process called when ice turns into water?",
+    "options": ["Freezing", "Melting", "Evaporation", "Condensation"],
+    "answer": 1,
+    "explanation": "Melting is the process of a solid becoming a liquid."
+  },
+  {
+    "question": "What is it called when water vapor turns into liquid water?",
+    "options": ["Evaporation", "Sublimation", "Condensation", "Freezing"],
+    "answer": 2,
+    "explanation": "Condensation is the phase change from gas to liquid. :contentReference[oaicite:8]{index=8}"
+  },
+  {
+    "question": "When water freezes into ice, this phase change is called ____.",
+    "options": ["Melting", "Freezing", "Evaporation", "Sublimation"],
+    "answer": 1,
+    "explanation": "Freezing refers to a liquid becoming a solid."
+  },
+  {
+    "question": "When ice turns directly into water vapor, bypassing liquid, it’s called ____.",
+    "options": ["Condensation", "Sublimation", "Deposition", "Evaporation"],
+    "answer": 1,
+    "explanation": "Sublimation is the transition directly from solid to gas. :contentReference[oaicite:9]{index=9}"
+  },
+  {
+    "question": "How should you handle a gas in a sealed container?",
+    "options": ["Allow it to expand freely", "Release pressure slowly", "Melt it", "Freeze it"],
+    "answer": 1,
+    "explanation": "To safely handle a pressurized gas, release any pressure slowly and carefully."
+  },
+  {
+    "question": "What’s the safest way to handle boiling liquid?",
+    "options": ["Leave it unattended", "Use protective gear and handle carefully", "Taste it", "Stir with bare hands"],
+    "answer": 1,
+    "explanation": "Protective gear and careful handling are essential for safety."
+  },
+  {
+    "question": "How should you deal with an unknown chemical powder?",
+    "options": ["Smell it directly", "Ingest a small amount", "Consult material safety information and wear protection", "Ignore it"],
+    "answer": 2,
+    "explanation": "Always consult safety data and use proper protective equipment."
+  },
+  {
+    "question": "Which animal is larger in size: an elephant or a mouse?",
+    "options": ["Mouse", "Elephant", "They’re the same", "Depends on species"],
+    "answer": 1,
+    "explanation": "An elephant is much larger than a mouse."
+  },
+  {
+    "question": "Which is smaller: a cat or a giraffe?",
+    "options": ["Giraffe", "Cat", "Same size", "Depends on breed"],
+    "answer": 1,
+    "explanation": "Cats are much smaller than giraffes."
+  },
+  {
+    "question": "Which animal is larger: a blue whale or a goldfish?",
+    "options": ["Goldfish", "Blue whale", "They’re the same", "Depends on environment"],
+    "answer": 1,
+    "explanation": "A blue whale is the largest animal, far bigger than a goldfish."
+  },
+  {
+    "question": "Which animal is smaller: a rabbit or a horse?",
+    "options": ["Horse", "Rabbit", "Same size", "Depends on breed"],
+    "answer": 1,
+    "explanation": "Rabbits are significantly smaller than horses."
+  },
+  {
+    "question": "Which animal is larger: a house cat or a kangaroo?",
+    "options": ["House cat", "Kangaroo", "Same size", "Depends on breed/species"],
+    "answer": 1,
+    "explanation": "Kangaroos are generally much larger than house cats."
+  },
+  {
+    "question": "Which is odorless: pure distilled water or vinegar?",
+    "options": ["Vinegar", "Distilled water", "Both have strong smell", "Both are odorless"],
+    "answer": 1,
+    "explanation": "Distilled water is odorless; vinegar has a distinct smell."
+  },
+  {
+    "question": "Which animal is smaller: a hamster or a human?",
+    "options": ["Human", "Hamster", "Same size", "Depends on person"],
+    "answer": 1,
+    "explanation": "Hamsters are much smaller than humans."
+  },
+  {
+    "question": "Which is a neutral (odorless) smell in everyday life?",
+    "options": ["Perfume", "Bleach", "Clean air", "Garbage"],
+    "answer": 2,
+    "explanation": "Clean air is essentially odorless in normal conditions."
+  },
+  {
+    "question": "Which animal is larger: an owl or an ant?",
+    "options": ["Ant", "Owl", "Same size", "Depends on species"],
+    "answer": 1,
+    "explanation": "Owls are much larger than ants."
+  },
+  {
+    "question": "What phase change occurs when water boils and becomes steam?",
+    "options": ["Freezing", "Condensation", "Evaporation", "Melting"],
+    "answer": 2,
+    "explanation": "Evaporation (or boiling) is the change from liquid to gas. :contentReference[oaicite:10]{index=10}"
   }
 ]
