@@ -3,180 +3,210 @@
     "question": "Which of the following is a primary color?",
     "options": ["Green", "Purple", "Red", "Orange"],
     "answer": 2,
-    "explanation": "Red is one of the three traditional primary colors (red, yellow, blue)."
+    "explanation": "Red is one of the three traditional primary colors (red, yellow, blue).",
+    "gif": "https://media.giphy.com/media/3o7TKxOhj1ZJr7x7Ti/giphy.gif"
   },
   {
     "question": "What are the primary colors?",
     "options": ["Red, Yellow, Blue", "Green, Orange, Purple", "Red, Green, Blue", "Black, White, Grey"],
     "answer": 0,
-    "explanation": "The traditional primary colors used in art are red, yellow, and blue. These cannot be created by mixing other colors."
+    "explanation": "The traditional primary colors used in art are red, yellow, and blue. These cannot be created by mixing other colors.",
+    "gif": "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
   },
   {
     "question": "What color do you get when you mix yellow and blue?",
     "options": ["Orange", "Purple", "Green", "Brown"],
     "answer": 2,
-    "explanation": "Yellow and blue are primary colors"
+    "explanation": "Yellow and blue are primary colors",
+    "gif": "https://media.giphy.com/media/3ohjUQv7f5mJ5w2zCk/giphy.gif"
   },
   {
     "question": "What color is formed by mixing red and yellow?",
     "options": ["Green", "Orange", "Purple", "Grey"],
     "answer": 1,
-    "explanation": "Red and yellow mix to form the secondary color orange. "
+    "explanation": "Red and yellow mix to form the secondary color orange. ",
+    "gif": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif"
   },
   {
     "question": "What color results from combining red and blue?",
     "options": ["Green", "Orange", "Yellow", "Purple"],
     "answer": 3,
-    "explanation": "Mixing red and blue (primary colors) yields the secondary color purple. "
+    "explanation": "Mixing red and blue (primary colors) yields the secondary color purple. ",
+    "gif": "https://media.giphy.com/media/xUPGcdhiQCFU5U6Gvm/giphy.gif"
   },
   {
     "question": "If you mix all three primary colors (red, yellow, blue), what is the likely result?",
     "options": ["Bright green", "Vivid pink", "Muddy brown", "Clean white"],
     "answer": 2,
-    "explanation": "Combining all three traditional primaries typically yields a muddy brown shade. "
+    "explanation": "Combining all three traditional primaries typically yields a muddy brown shade. ",
+    "gif": "https://media.giphy.com/media/l0HlRzrfS3o9jyY5q/giphy.gif"
   },
   {
     "question": "Which do you smell when smelling a fresh rose?",
     "options": ["Good smell", "Bad smell", "Odorless", "Spicy smell"],
     "answer": 0,
-    "explanation": "A fresh rose usually emits a pleasant, good smell."
+    "explanation": "A fresh rose usually emits a pleasant, good smell.",
+    "gif": "https://media.giphy.com/media/6ZC4Nv0bdAPQA/giphy.gif"
   },
   {
     "question": "What type of smell do rotten eggs generally have?",
     "options": ["Good smell", "Bad smell", "Odorless", "Sweet smell"],
     "answer": 1,
-    "explanation": "Rotten eggs have a bad, sulphurous smell."
+    "explanation": "Rotten eggs have a bad, sulphurous smell.",
+    "gif": "https://media.giphy.com/media/fpXxIjftmkk9y/giphy.gif"
   },
   {
     "question": "How would you describe the smell of clean water?",
     "options": ["Good smell", "Bad smell", "Odorless", "Fruity smell"],
     "answer": 2,
-    "explanation": "Clean water is typically odorless."
+    "explanation": "Clean water is typically odorless.",
+    "gif": "https://media.giphy.com/media/3ohs4xjL5neG4jWTDi/giphy.gif"
   },
   {
     "question": "Which type of matter keeps its shape and size?",
     "options": ["Solid", "Liquid", "Gas", "Plasma"],
     "answer": 0,
-    "explanation": "Solids stay the same shape and size. They don’t change unless you force them."
+    "explanation": "Solids stay the same shape and size. They don’t change unless you force them.",
+    "gif": "https://media.giphy.com/media/l4KhQo2MESJkc6QbS/giphy.gif"
   },
   {
     "question": "Which type of matter changes shape but keeps the same amount?",
     "options": ["Solid", "Liquid", "Gas", "Plasma"],
     "answer": 1,
-    "explanation": "Liquids take the shape of the container but keep the same amount inside."
+    "explanation": "Liquids take the shape of the container but keep the same amount inside.",
+    "gif": "https://media.giphy.com/media/3oKIPsx2VAYAgEHC12/giphy.gif"
   },
   {
     "question": "Which type of matter changes both shape and size?",
     "options": ["Solid", "Liquid", "Gas", "Plasma"],
     "answer": 2,
-    "explanation": "Gases fill all the space they can. They don’t have a fixed shape or size."
+    "explanation": "Gases fill all the space they can. They don’t have a fixed shape or size.",
+    "gif": "https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif"
   },
   {
     "question": "Which one is not a normal type of matter?",
     "options": ["Solid", "Plasma", "Crystal", "Gas"],
     "answer": 2,
-    "explanation": "A crystal is a kind of solid, not a basic type of matter like solid, liquid, gas, or plasma."
+    "explanation": "A crystal is a kind of solid, not a basic type of matter like solid, liquid, gas, or plasma.",
+    "gif": "https://media.giphy.com/media/xT0xeuOy2Fcl9vDGiA/giphy.gif"
   },
   {
     "question": "What is the process called when ice turns into water?",
     "options": ["Freezing", "Melting", "Evaporation", "Condensation"],
     "answer": 1,
-    "explanation": "Melting is the process of a solid becoming a liquid."
+    "explanation": "Melting is the process of a solid becoming a liquid.",
+    "gif": "https://media.giphy.com/media/l1J3preURPiwjRPvG/giphy.gif"
   },
   {
     "question": "What is it called when water vapor turns into liquid water?",
     "options": ["Evaporation", "Sublimation", "Condensation", "Freezing"],
     "answer": 2,
-    "explanation": "Condensation is the phase change from gas to liquid. "
+    "explanation": "Condensation is the phase change from gas to liquid. ",
+    "gif": "https://media.giphy.com/media/3o6ZsUazrb6CzFqjHa/giphy.gif"
   },
   {
     "question": "When water freezes into ice, this phase change is called ____.",
     "options": ["Melting", "Freezing", "Evaporation", "Sublimation"],
     "answer": 1,
-    "explanation": "Freezing refers to a liquid becoming a solid."
+    "explanation": "Freezing refers to a liquid becoming a solid.",
+    "gif": "https://media.giphy.com/media/3o6ZsZkJux1DPZWSbm/giphy.gif"
   },
   {
     "question": "When ice turns directly into water vapor, bypassing liquid, it’s called ____.",
     "options": ["Condensation", "Sublimation", "Deposition", "Evaporation"],
     "answer": 1,
-    "explanation": "Sublimation is the transition directly from solid to gas. "
+    "explanation": "Sublimation is the transition directly from solid to gas. ",
+    "gif": "https://media.giphy.com/media/TPl5NnCD5bW88/giphy.gif"
   },
   {
     "question": "How should you handle a gas in a sealed container?",
     "options": ["Allow it to expand freely", "Release pressure slowly", "Melt it", "Freeze it"],
     "answer": 1,
-    "explanation": "To safely handle a pressurized gas, release any pressure slowly and carefully."
+    "explanation": "To safely handle a pressurized gas, release any pressure slowly and carefully.",
+    "gif": "https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif"
   },
   {
     "question": "What’s the safest way to handle boiling liquid?",
     "options": ["Leave it unattended", "Use protective gear and handle carefully", "Taste it", "Stir with bare hands"],
     "answer": 1,
-    "explanation": "Protective gear and careful handling are essential for safety."
+    "explanation": "Protective gear and careful handling are essential for safety.",
+    "gif": "https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif"
   },
   {
     "question": "How should you deal with an unknown chemical powder?",
     "options": ["Smell it directly", "Ingest a small amount", "Consult material safety information and wear protection", "Ignore it"],
     "answer": 2,
-    "explanation": "Always consult safety data and use proper protective equipment."
+    "explanation": "Always consult safety data and use proper protective equipment.",
+    "gif": "https://media.giphy.com/media/QMHoU66sBXqqLqYvGO/giphy.gif"
   },
   {
     "question": "Which animal is larger in size: an elephant or a mouse?",
     "options": ["Mouse", "Elephant", "They’re the same", "Depends on species"],
     "answer": 1,
-    "explanation": "An elephant is much larger than a mouse."
+    "explanation": "An elephant is much larger than a mouse.",
+    "gif": "https://media.giphy.com/media/3o7aTskHEUdgCQAXde/giphy.gif"
   },
   {
     "question": "Which is smaller: a cat or a giraffe?",
     "options": ["Giraffe", "Cat", "Same size", "Depends on breed"],
     "answer": 1,
-    "explanation": "Cats are much smaller than giraffes."
+    "explanation": "Cats are much smaller than giraffes.",
+    "gif": "https://media.giphy.com/media/3o6ZsYPz7ZrVmVtKH6/giphy.gif"
   },
   {
     "question": "Which animal is larger: a blue whale or a goldfish?",
     "options": ["Goldfish", "Blue whale", "They’re the same", "Depends on environment"],
     "answer": 1,
-    "explanation": "A blue whale is the largest animal, far bigger than a goldfish."
+    "explanation": "A blue whale is the largest animal, far bigger than a goldfish.",
+    "gif": "https://media.giphy.com/media/3oEjI5VtIhHvK37WYo/giphy.gif"
   },
   {
     "question": "Which animal is smaller: a rabbit or a horse?",
     "options": ["Horse", "Rabbit", "Same size", "Depends on breed"],
     "answer": 1,
-    "explanation": "Rabbits are significantly smaller than horses."
+    "explanation": "Rabbits are significantly smaller than horses.",
+    "gif": "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif"
   },
   {
     "question": "Which animal is larger: a house cat or a kangaroo?",
     "options": ["House cat", "Kangaroo", "Same size", "Depends on breed/species"],
     "answer": 1,
-    "explanation": "Kangaroos are generally much larger than house cats."
+    "explanation": "Kangaroos are generally much larger than house cats.",
+    "gif": "https://media.giphy.com/media/l0MYRzcWP3h1PPRck/giphy.gif"
   },
   {
     "question": "Which is odorless: pure distilled water or vinegar?",
     "options": ["Vinegar", "Distilled water", "Both have strong smell", "Both are odorless"],
     "answer": 1,
-    "explanation": "Distilled water is odorless; vinegar has a distinct smell."
+    "explanation": "Distilled water is odorless; vinegar has a distinct smell.",
+    "gif": "https://media.giphy.com/media/3o6Zt8zb1L6pB4O20E/giphy.gif"
   },
   {
     "question": "Which animal is smaller: a hamster or a human?",
     "options": ["Human", "Hamster", "Same size", "Depends on person"],
     "answer": 1,
-    "explanation": "Hamsters are much smaller than humans."
+    "explanation": "Hamsters are much smaller than humans.",
+    "gif": "https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif"
   },
   {
     "question": "Which is a neutral (odorless) smell in everyday life?",
     "options": ["Perfume", "Bleach", "Clean air", "Garbage"],
     "answer": 2,
-    "explanation": "Clean air is essentially odorless in normal conditions."
+    "explanation": "Clean air is essentially odorless in normal conditions.",
+    "gif": "https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif"
   },
   {
     "question": "Which animal is larger: an owl or an ant?",
     "options": ["Ant", "Owl", "Same size", "Depends on species"],
     "answer": 1,
-    "explanation": "Owls are much larger than ants."
+    "explanation": "Owls are much larger than ants.",
+    "gif": "https://media.giphy.com/media/SWnVjLEgh4lEc/giphy.gif"
   },
   {
     "question": "What phase change occurs when water boils and becomes steam?",
     "options": ["Freezing", "Condensation", "Evaporation", "Melting"],
     "answer": 2,
-    "explanation": "Evaporation (or boiling) is the change from liquid to gas. "
+    "explanation": "Evaporation (or boiling) is the change from liquid to gas. ",
+    "gif": "https://media.giphy.com/media/3o6ZsZkJux1DPZWSbm/giphy.gif"
   }
 ]
