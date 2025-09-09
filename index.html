@@ -10,13 +10,11 @@
       background-size: cover;
       background-position: center;
       font-family: Arial, sans-serif;
-      padding: 20px 15px;
       margin: 0;
       color: #333;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      overflow: hidden;
+      position: relative;
     }
 
     h1 {
@@ -32,6 +30,7 @@
       width: 100%;
       max-width: 600px;
       transition: opacity 0.5s ease;
+      z-index: 1;
     }
 
     #mainContent.dimmed {
@@ -45,7 +44,6 @@
       border-radius: 8px;
       box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
       margin-bottom: 20px;
-      word-wrap: break-word;
     }
 
     .question-box h2 {
@@ -83,36 +81,36 @@
       background-color: #0056b3;
     }
 
-    #explanation, #result {
-      text-align: center;
-      max-width: 600px;
-      width: 90%;
-      margin-top: 25px;
-      font-weight: 600;
-      color: black;
-    }
-
-    #explanation {
-      font-size: 1.1rem;
-    }
-
     #result {
+      text-align: center;
       font-size: 1.3rem;
+      font-weight: bold;
       color: green;
+      margin-top: 20px;
     }
 
-    #gifContainer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 15px;
-      max-width: 600px;
-      width: 90%;
+    #gifContainer,
+    #explanation {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      text-align: center;
+      transition: opacity 0.4s ease;
+      max-width: 90%;
+    }
+
+    #gifContainer.show,
+    #explanation.show {
+      opacity: 1;
+      pointer-events: auto;
     }
 
     #gifContainer img {
-      max-width: 100%;
-      height: auto;
+      max-width: 300px;
       border-radius: 8px;
     }
 
@@ -120,7 +118,6 @@
       display: none;
     }
 
-    /* Responsive typography */
     @media (max-width: 768px) {
       h1 { font-size: 1.8rem; }
       .question-box h2 { font-size: 1.1rem; }
@@ -182,6 +179,8 @@
     }
 
     function showQuestion() {
+      explanationDiv.classList.remove('show');
+      gifContainer.classList.remove('show');
       explanationDiv.textContent = '';
       gifContainer.innerHTML = '';
       resultDiv.textContent = '';
@@ -212,8 +211,11 @@
     function showExplanation(explanation, gif, audioUrl) {
       isShowingExplanation = true;
       mainContent.classList.add('dimmed');
+
       explanationDiv.textContent = explanation;
+      explanationDiv.classList.add('show');
       gifContainer.innerHTML = `<img src="${gif}" alt="Explanation GIF" />`;
+      gifContainer.classList.add('show');
 
       if (audioUrl) {
         audioPlayer.src = audioUrl;
