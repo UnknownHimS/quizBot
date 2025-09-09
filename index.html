@@ -2,138 +2,194 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Math Quiz Bot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Math Quiz</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f5f5f5;
+      padding: 30px;
+      background: #f0f4f8;
       color: #333;
     }
-
     h1 {
       text-align: center;
-    }
-
-    .question-box {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       margin-bottom: 20px;
     }
-
+    .question-box {
+      background: #fff;
+      padding: 20px 25px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
     .option {
       display: block;
       margin: 10px 0;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
       cursor: pointer;
-      background: #007bff;
-      color: #fff;
+      font-size: 18px;
+    }
+    button {
+      display: block;
+      margin: 20px auto 0;
+      padding: 12px 25px;
+      font-size: 18px;
+      background-color: #007bff;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
-
-    button:hover {
-      background: #0056b3;
+    button:disabled {
+      background-color: #999;
+      cursor: not-allowed;
     }
-
+    button:hover:not(:disabled) {
+      background-color: #0056b3;
+    }
+    #explanation {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #2a2a2a;
+    }
+    #gifContainer {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+    #gifContainer img {
+      max-width: 250px;
+      border-radius: 8px;
+    }
     #result {
       font-weight: bold;
-      font-size: 18px;
-      margin-top: 20px;
+      font-size: 22px;
+      margin-top: 30px;
       text-align: center;
+      color: green;
     }
   </style>
 </head>
 <body>
 
-  <h1>🧠 Basic Math Quiz</h1>
+  <h1>🧠 Interactive Math Quiz</h1>
+
   <div id="quiz"></div>
+
   <button id="nextBtn">Next</button>
+
+  <div id="gifContainer"></div>
+  <div id="explanation"></div>
   <div id="result"></div>
 
   <script>
-    // Inline JSON-like question set
-    const questions = [
-      {
-        "question": "What is 5 + 3?",
-        "options": ["6", "7", "8", "9"],
-        "answer": 2
-      },
-      {
-        "question": "What is 10 - 4?",
-        "options": ["6", "5", "4", "7"],
-        "answer": 0
-      },
-      {
-        "question": "What is 7 x 2?",
-        "options": ["12", "14", "16", "10"],
-        "answer": 1
-      },
-      {
-        "question": "What is 12 ÷ 4?",
-        "options": ["2", "4", "3", "5"],
-        "answer": 2
-      },
-      {
-        "question": "What is 9 + 6?",
-        "options": ["14", "15", "13", "16"],
-        "answer": 1
-      }
-    ];
-
+    let questions = [];
     let currentQuestionIndex = 0;
     let score = 0;
+    let isShowingExplanation = false;
 
-    const quizContainer = document.getElementById("quiz");
-    const nextBtn = document.getElementById("nextBtn");
-    const resultDiv = document.getElementById("result");
+    const quizContainer = document.getElementById('quiz');
+    const nextBtn = document.getElementById('nextBtn');
+    const explanationDiv = document.getElementById('explanation');
+    const gifContainer = document.getElementById('gifContainer');
+    const resultDiv = document.getElementById('result');
+
+    nextBtn.disabled = true; // Disabled until question loads and option selected
+
+    async function loadQuestions() {
+      try {
+        const res = await fetch('questions.json');
+        questions = await res.json();
+        showQuestion();
+      } catch (error) {
+        quizContainer.innerHTML = "Failed to load questions.";
+      }
+    }
 
     function showQuestion() {
+      explanationDiv.textContent = '';
+      gifContainer.innerHTML = '';
+      resultDiv.textContent = '';
+      nextBtn.disabled = true;
+      isShowingExplanation = false;
+
       const q = questions[currentQuestionIndex];
       quizContainer.innerHTML = `
         <div class="question-box">
           <h2>Q${currentQuestionIndex + 1}: ${q.question}</h2>
           ${q.options.map((opt, i) => `
             <label class="option">
-              <input type="radio" name="option" value="${i}" />
-              ${opt}
+              <input type="radio" name="option" value="${i}"> ${opt}
             </label>
           `).join('')}
         </div>
       `;
+
+      // Enable next button only after selecting an option
+      const options = document.querySelectorAll('input[name="option"]');
+      options.forEach(opt => {
+        opt.addEventListener('change', () => {
+          if (!isShowingExplanation) nextBtn.disabled = false;
+        });
+      });
     }
 
-    nextBtn.addEventListener("click", () => {
+    function showExplanation(explanation, gif) {
+      isShowingExplanation = true;
+      explanationDiv.textContent = explanation;
+      gifContainer.innerHTML = `<img src="${gif}" alt="Explanation GIF" />`;
+      nextBtn.disabled = true;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if (isShowingExplanation) return; // Prevent multiple clicks during explanation
+
       const selected = document.querySelector('input[name="option"]:checked');
       if (!selected) {
-        alert("Please select an option.");
+        alert('Please select an option before proceeding!');
         return;
       }
 
-      const answer = parseInt(selected.value);
-      if (answer === questions[currentQuestionIndex].answer) {
+      const selectedAnswer = parseInt(selected.value);
+      const correctAnswer = questions[currentQuestionIndex].answer;
+
+      if (selectedAnswer === correctAnswer) {
         score++;
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          showQuestion();
+        } else {
+          endQuiz();
+        }
+      } else {
+        // Show explanation with GIF, then proceed automatically
+        const { explanation, gif } = questions[currentQuestionIndex];
+        showExplanation(explanation, gif);
+
+        setTimeout(() => {
+          currentQuestionIndex++;
+          if (currentQuestionIndex < questions.length) {
+            showQuestion();
+          } else {
+            endQuiz();
+          }
+        }, 5000); // 5 seconds delay for explanation
       }
 
-      currentQuestionIndex++;
-      if (currentQuestionIndex < questions.length) {
-        showQuestion();
-      } else {
-        quizContainer.innerHTML = "";
-        nextBtn.style.display = "none";
-        resultDiv.textContent = `✅ You scored ${score} out of ${questions.length}`;
-      }
+      nextBtn.disabled = true;
     });
 
-    // Start quiz
-    showQuestion();
+    function endQuiz() {
+      quizContainer.innerHTML = '';
+      explanationDiv.textContent = '';
+      gifContainer.innerHTML = '';
+      nextBtn.style.display = 'none';
+      resultDiv.textContent = `🎉 Quiz finished! You scored ${score} out of ${questions.length}.`;
+    }
+
+    loadQuestions();
   </script>
 
 </body>
