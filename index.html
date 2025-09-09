@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Math Quiz Bot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .question-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .option {
+      display: block;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    #result {
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 Basic Math Quiz</h1>
+  <div id="quiz"></div>
+  <button id="nextBtn">Next</button>
+  <div id="result"></div>
+
+  <script>
+    // Inline JSON-like question set
+    const questions = [
+      {
+        "question": "What is 5 + 3?",
+        "options": ["6", "7", "8", "9"],
+        "answer": 2
+      },
+      {
+        "question": "What is 10 - 4?",
+        "options": ["6", "5", "4", "7"],
+        "answer": 0
+      },
+      {
+        "question": "What is 7 x 2?",
+        "options": ["12", "14", "16", "10"],
+        "answer": 1
+      },
+      {
+        "question": "What is 12 ÷ 4?",
+        "options": ["2", "4", "3", "5"],
+        "answer": 2
+      },
+      {
+        "question": "What is 9 + 6?",
+        "options": ["14", "15", "13", "16"],
+        "answer": 1
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    const quizContainer = document.getElementById("quiz");
+    const nextBtn = document.getElementById("nextBtn");
+    const resultDiv = document.getElementById("result");
+
+    function showQuestion() {
+      const q = questions[currentQuestionIndex];
+      quizContainer.innerHTML = `
+        <div class="question-box">
+          <h2>Q${currentQuestionIndex + 1}: ${q.question}</h2>
+          ${q.options.map((opt, i) => `
+            <label class="option">
+              <input type="radio" name="option" value="${i}" />
+              ${opt}
+            </label>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      const selected = document.querySelector('input[name="option"]:checked');
+      if (!selected) {
+        alert("Please select an option.");
+        return;
+      }
+
+      const answer = parseInt(selected.value);
+      if (answer === questions[currentQuestionIndex].answer) {
+        score++;
+      }
+
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        showQuestion();
+      } else {
+        quizContainer.innerHTML = "";
+        nextBtn.style.display = "none";
+        resultDiv.textContent = `✅ You scored ${score} out of ${questions.length}`;
+      }
+    });
+
+    // Start quiz
+    showQuestion();
+  </script>
+
+</body>
+</html>
