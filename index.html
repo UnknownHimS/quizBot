@@ -5,45 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Interactive Math Quiz</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
+    body {
       background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=90');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px 15px;
-      position: relative;
+      font-family: Arial, sans-serif;
+      margin: 0;
       color: #333;
+      min-height: 100vh;
+      overflow: hidden;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 20px;
+      margin: 20px 0;
       color: white;
       text-shadow: 0 0 5px rgba(0,0,0,0.7);
-      max-width: 600px;
-      width: 90%;
     }
 
     #mainContent {
       width: 100%;
       max-width: 600px;
-      transition: opacity 0.5s ease;
-      z-index: 1;
+      margin: auto;
+      transition: all 0.4s ease;
+      padding: 0 15px;
     }
 
     #mainContent.hidden {
-      opacity: 0;
-      pointer-events: none;
+      display: none;
     }
 
     .question-box {
@@ -54,20 +43,16 @@
       margin-bottom: 20px;
     }
 
-    .question-box h2 {
-      font-size: 1.3rem;
-    }
-
     .option {
       display: block;
       margin: 10px 0;
-      cursor: pointer;
       font-size: 1.1rem;
+      cursor: pointer;
     }
 
     button {
       display: block;
-      margin: 20px auto 0;
+      margin: 0 auto 20px;
       padding: 12px 25px;
       font-size: 1.1rem;
       background-color: #007bff;
@@ -76,8 +61,6 @@
       color: white;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      max-width: 200px;
-      width: 90%;
     }
 
     button:disabled {
@@ -95,21 +78,23 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      max-width: 90%;
       text-align: center;
+      z-index: 999;
       opacity: 0;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.3s ease;
       pointer-events: none;
-      z-index: 10;
+    }
+
+    #gifContainer.show,
+    #explanation.show {
+      opacity: 1;
+      pointer-events: auto;
     }
 
     #gifContainer img {
       max-width: 300px;
       border-radius: 8px;
-    }
-
-    .show {
-      opacity: 1 !important;
-      pointer-events: auto;
     }
 
     #result {
@@ -118,10 +103,6 @@
       font-weight: bold;
       color: green;
       margin-top: 20px;
-    }
-
-    audio {
-      display: none;
     }
   </style>
 </head>
@@ -137,7 +118,6 @@
   <div id="gifContainer"></div>
   <div id="explanation"></div>
   <div id="result"></div>
-  <audio id="audioPlayer" preload="auto"></audio>
 
   <script>
     let questions = [];
@@ -151,7 +131,6 @@
     const gifContainer = document.getElementById('gifContainer');
     const resultDiv = document.getElementById('result');
     const mainContent = document.getElementById('mainContent');
-    const audioPlayer = document.getElementById('audioPlayer');
 
     nextBtn.disabled = true;
 
@@ -166,32 +145,45 @@
     }
 
     function showQuestion() {
-      explanationDiv.classList.remove('show');
-      gifContainer.classList.remove('show');
       explanationDiv.textContent = '';
       gifContainer.innerHTML = '';
-      resultDiv.textContent = '';
+      explanationDiv.classList.remove('show');
+      gifContainer.classList.remove('show');
+      mainContent.classList.remove('hidden');
+
       nextBtn.disabled = true;
       isShowingExplanation = false;
-      mainContent.classList.remove('hidden');
+
+      const q = questions[currentQuestionIndex];
+      quizContainer.innerHTML = `
+        <div class="question-box">
+          <h2>Q${currentQuestionIndex + 1}: ${q.question}</h2>
+          ${q.options.map((opt, i) => `
+            <label class="option">
+              <input type="radio" name="option" value="${i}"> ${opt}
+            </label>
+          `).join('')}
+        </div>
+      `;
+
+      const options = document.querySelectorAll('input[name="option"]');
+      options.forEach(opt => {
+        opt.addEventListener('change', () => {
+          if (!isShowingExplanation) nextBtn.disabled = false;
+        });
+      });
     }
 
-    function showExplanation(explanation, gif, audioUrl) {
+    function showExplanation(explanation, gif) {
       isShowingExplanation = true;
-      mainContent.classList.add('hidden');
+
+      mainContent.classList.add('hidden'); // Hide quiz content
 
       explanationDiv.textContent = explanation;
+      gifContainer.innerHTML = `<img src="${gif}" alt="Explanation GIF" />`;
+
       explanationDiv.classList.add('show');
-
-      if (gif) {
-        gifContainer.innerHTML = `<img src="${gif}" alt="GIF" />`;
-        gifContainer.classList.add('show');
-      }
-
-      if (audioUrl) {
-        audioPlayer.src = audioUrl;
-        audioPlayer.play();
-      }
+      gifContainer.classList.add('show');
 
       nextBtn.disabled = true;
     }
@@ -217,8 +209,8 @@
           endQuiz();
         }
       } else {
-        const { explanation, gif, audio } = questions[currentQuestionIndex];
-        showExplanation(explanation, gif, audio);
+        const { explanation, gif } = questions[currentQuestionIndex];
+        showExplanation(explanation, gif);
 
         setTimeout(() => {
           currentQuestionIndex++;
@@ -227,7 +219,7 @@
           } else {
             endQuiz();
           }
-        }, 10000);
+        }, 10000); // 10 seconds delay
       }
 
       nextBtn.disabled = true;
