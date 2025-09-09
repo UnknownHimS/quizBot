@@ -18,21 +18,21 @@
     "options": ["Orange", "Purple", "Green", "Brown"],
     "answer": 2,
     "explanation": "Yellow and blue are primary colors",
-    "gif": "https://media.giphy.com/media/3ohjUQv7f5mJ5w2zCk/giphy.gif"
+    "gif": "https://img1.picmix.com/output/stamp/normal/2/1/9/1/2501912_2ddac.gif"
   },
   {
     "question": "What color is formed by mixing red and yellow?",
     "options": ["Green", "Orange", "Purple", "Grey"],
     "answer": 1,
     "explanation": "Red and yellow mix to form the secondary color orange. ",
-    "gif": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif"
+    "gif": "https://img1.picmix.com/output/stamp/normal/2/1/9/1/2501912_2ddac.gif"
   },
   {
     "question": "What color results from combining red and blue?",
     "options": ["Green", "Orange", "Yellow", "Purple"],
     "answer": 3,
     "explanation": "Mixing red and blue (primary colors) yields the secondary color purple. ",
-    "gif": "https://media.giphy.com/media/xUPGcdhiQCFU5U6Gvm/giphy.gif"
+    "gif": "https://img1.picmix.com/output/stamp/normal/2/1/9/1/2501912_2ddac.gif"
   },
   {
     "question": "If you mix all three primary colors (red, yellow, blue), what is the likely result?",
@@ -46,14 +46,14 @@
     "options": ["Good smell", "Bad smell", "Odorless", "Spicy smell"],
     "answer": 0,
     "explanation": "A fresh rose usually emits a pleasant, good smell.",
-    "gif": "https://media.giphy.com/media/6ZC4Nv0bdAPQA/giphy.gif"
+    "gif": "https://acegif.com/wp-content/uploads/roses-12.gif"
   },
   {
     "question": "What type of smell do rotten eggs generally have?",
     "options": ["Good smell", "Bad smell", "Odorless", "Sweet smell"],
     "answer": 1,
     "explanation": "Rotten eggs have a bad, sulphurous smell.",
-    "gif": "https://media.giphy.com/media/fpXxIjftmkk9y/giphy.gif"
+    "gif": "https://www.cdn.fortisbc.com/libraries/images/default-source/blogs/23-005.3_gasodour_blog_egg-jump_700wide-anim.gif?sfvrsn=5803ecff_1"
   },
   {
     "question": "How would you describe the smell of clean water?",
@@ -67,14 +67,14 @@
     "options": ["Solid", "Liquid", "Gas", "Plasma"],
     "answer": 0,
     "explanation": "Solids stay the same shape and size. They don’t change unless you force them.",
-    "gif": "https://media.giphy.com/media/l4KhQo2MESJkc6QbS/giphy.gif"
+    "gif": "https://techiclucas.weebly.com/uploads/3/9/0/6/39067289/4888409_orig.gif"
   },
   {
     "question": "Which type of matter changes shape but keeps the same amount?",
     "options": ["Solid", "Liquid", "Gas", "Plasma"],
     "answer": 1,
     "explanation": "Liquids take the shape of the container but keep the same amount inside.",
-    "gif": "https://media.giphy.com/media/3oKIPsx2VAYAgEHC12/giphy.gif"
+    "gif": "https://techiclucas.weebly.com/uploads/3/9/0/6/39067289/4888409_orig.gif"
   },
   {
     "question": "Which type of matter changes both shape and size?",
@@ -88,7 +88,7 @@
     "options": ["Solid", "Plasma", "Crystal", "Gas"],
     "answer": 2,
     "explanation": "A crystal is a kind of solid, not a basic type of matter like solid, liquid, gas, or plasma.",
-    "gif": "https://media.giphy.com/media/xT0xeuOy2Fcl9vDGiA/giphy.gif"
+    "gif": "https://techiclucas.weebly.com/uploads/3/9/0/6/39067289/4888409_orig.gif"
   },
   {
     "question": "What is the process called when ice turns into water?",
