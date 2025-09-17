@@ -9,127 +9,175 @@
   <link rel="icon" type="image/png" href="https://wiki.mushureport.com/images/thumb/f/fc/Lore.png/417px-Lore.png?20230131184640">
 
 
-  <style>
-    body {
-      background-image: url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-      background-size: contain;
-      background-position: center;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      color: #333;
-      min-height: 100vh;
-      overflow: hidden;
-    }
+<style>
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #333;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 10px;
+  position: relative;
+  z-index: 0;
+}
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vh;       /* swap height and width */
+  height: 100vw;
+  background-image: url('https://i.pinimg.com/1200x/0c/a0/9b/0ca09b949cf0fdb704e5d21c1587b4f2.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: rotate(90deg) translateX(-100%);
+  transform-origin: top left;
+  z-index: -1;
+}
+
+
+  h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: rgba(0, 0, 0, 0.7);
+    text-shadow: 3px 3px 5px white;
+    font-size: 6vw;
+  }
+
+  #mainContent {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    transition: all 0.4s ease;
+    padding: 0 15px;
+  }
+
+  #mainContent.hidden {
+    display: none;
+  }
+
+  .question-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+  }
+
+  .option {
+    display: block;
+    margin: 10px 0;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 20px;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    box-shadow: 0px 0px 5px black;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+  }
+
+  button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+
+  #gifContainer {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    text-align: center;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  #gifContainer img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+  }
+
+  #explanation {
+    position: fixed;
+    background: white;
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    padding: 20px;
+    box-shadow: 0px 0px 5px black;
+    font-size: 1.3rem;
+    text-align: center;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 8px;
+  }
+
+  #gifContainer.show,
+  #explanation.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #result {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: green;
+    margin-top: 20px;
+  }
+
+  audio {
+    display: none;
+  }
+
+  @media screen and (max-width: 480px) {
     h1 {
-      text-align: center;
-      margin: 20px 0;
-      color: rgba(0,0,0,0.7);
-      text-shadow: 3px 3px 5px white;
-    }
-
-    #mainContent {
-      width: 100%;
-      max-width: 600px;
-      margin: auto;
-      transition: all 0.4s ease;
-      padding: 0 15px;
-    }
-
-    #mainContent.hidden {
-      display: none;
-    }
-
-    .question-box {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 20px 25px;
-      border-radius: 8px;
-      box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
-      margin-bottom: 20px;
+      font-size: 8vw;
     }
 
     .option {
-      display: block;
-      margin: 10px 0;
-      font-size: 1.1rem;
-      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    #explanation {
+      font-size: 1rem;
     }
 
     button {
-      display: block;
-      margin: 0 auto 20px;
-      padding: 12px 25px;
-      font-size: 1.1rem;
-      box-shadow:0px 0px 5px black;
-      background-color: #007bff;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:disabled {
-      background-color: #999;
-      cursor: not-allowed;
-    }
-
-    button:hover:not(:disabled) {
-      background-color: #0056b3;
-    }
-
-    #gifContainer{
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 90%;
-      text-align: center;
-      z-index: 999;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-    #explanation {
-      position: absolute;
-      background:white;
-      color:black;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 90%;
-      box-shadow:0px 0px 5px black;
-      font-size:2rem;
-      text-align: center;
-      z-index: 999;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    #gifContainer.show,
-    #explanation.show {
-      opacity: 1;
-      pointer-events: auto;
+      font-size: 1rem;
+      padding: 10px 15px;
     }
 
     #gifContainer img {
-      max-width: 300px;
-      border-radius: 8px;
+      max-width: 90%;
     }
+  }
+</style>
 
-    #result {
-      text-align: center;
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: green;
-      margin-top: 20px;
-    }
-
-    audio {
-      display: none;
-    }
-  </style>
 </head>
 <body>
 
