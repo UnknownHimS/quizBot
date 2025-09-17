@@ -10,7 +10,7 @@
 
 
 <style>
- body {
+body {
   font-family: Arial, sans-serif;
   margin: 0;
   color: #333;
@@ -27,12 +27,12 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 140vh;   /* slightly bigger */
-  height: 140vw;
+  width: 100vh;       /* swap height and width */
+  height: 100vw;
   background-image: url('https://i.pinimg.com/1200x/0c/a0/9b/0ca09b949cf0fdb704e5d21c1587b4f2.jpg');
   background-size: cover;
   background-position: center;
-  transform: rotate(90deg) translateX(-100%);
+  transform: rotate(90deg) translateY(-100%);
   transform-origin: top left;
   z-index: -1;
 }
