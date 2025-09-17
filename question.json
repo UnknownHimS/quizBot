@@ -1,122 +1,197 @@
 [
   {
-    "question": "What is the derivative of f(x) = 5x^3 - 2x + 7?",
-    "options": ["15x^2 - 2", "5x^2 - 2", "15x^2 + 2", "5x^3 - 2x"],
-    "answer": 0,
-    "explanation": "Using the power rule, the derivative of 5x^3 is 15x^2 and the derivative of -2x is -2."
-  },
-  {
-    "question": "Which law explains the relationship between pressure and volume of a gas at constant temperature?",
-    "options": ["Boyle’s Law", "Charles’s Law", "Avogadro’s Law", "Gay-Lussac’s Law"],
-    "answer": 0,
-    "explanation": "Boyle’s Law states that pressure and volume are inversely proportional at constant temperature."
-  },
-  {
-    "question": "What is the pH of a neutral solution at 25°C?",
-    "options": ["7", "0", "14", "1"],
-    "answer": 0,
-    "explanation": "Neutral solutions have a pH of 7 at 25°C."
-  },
-  {
-    "question": "What is the integral of f(x) = 2x with respect to x?",
-    "options": ["x^2 + C", "2x + C", "x^2/2 + C", "4x + C"],
-    "answer": 0,
-    "explanation": "Integral of 2x dx is x^2 + C, where C is the constant of integration."
-  },
-  {
-    "question": "What is the formula to calculate the acceleration of an object?",
-    "options": ["a = v/t", "a = F/m", "a = m/F", "a = s/t"],
+    "question": "Which function is used to print output to the screen in C?",
+    "options": ["print()", "printf()", "cout", "echo"],
     "answer": 1,
-    "explanation": "Newton’s Second Law states acceleration a = Force (F) divided by mass (m)."
+    "explanation": "`printf()` is the standard function used in C to print output to the console."
   },
   {
-    "question": "Which element has the atomic number 6?",
-    "options": ["Carbon", "Nitrogen", "Oxygen", "Helium"],
-    "answer": 0,
-    "explanation": "Carbon has the atomic number 6."
-  },
-  {
-    "question": "What type of bond involves the sharing of electron pairs between atoms?",
-    "options": ["Ionic bond", "Covalent bond", "Metallic bond", "Hydrogen bond"],
-    "answer": 1,
-    "explanation": "Covalent bonds involve sharing electron pairs between atoms."
-  },
-  {
-    "question": "What is the value of sin(90°)?",
-    "options": ["0", "1", "-1", "Undefined"],
-    "answer": 1,
-    "explanation": "sin(90°) equals 1."
-  },
-  {
-    "question": "Which mathematical concept describes the rate of change of a function?",
-    "options": ["Integral", "Derivative", "Limit", "Sum"],
-    "answer": 1,
-    "explanation": "The derivative measures the rate of change of a function."
-  },
-  {
-    "question": "What is the next number in the Fibonacci sequence: 1, 1, 2, 3, 5, 8, ...?",
-    "options": ["10", "13", "15", "12"],
-    "answer": 1,
-    "explanation": "Each number is the sum of the previous two; next is 13."
-  },
-  {
-    "question": "Which of these quantities is a vector?",
-    "options": ["Speed", "Distance", "Acceleration", "Mass"],
+    "question": "Which header file is required for printf and scanf?",
+    "options": ["math.h", "string.h", "stdio.h", "stdlib.h"],
     "answer": 2,
-    "explanation": "Acceleration is a vector because it has both magnitude and direction."
+    "explanation": "`stdio.h` contains the declarations for `printf()` and `scanf()`."
   },
   {
-    "question": "What is the term for the energy stored in a stretched or compressed spring?",
-    "options": ["Kinetic energy", "Thermal energy", "Elastic potential energy", "Chemical energy"],
-    "answer": 2,
-    "explanation": "Elastic potential energy is stored in a spring when it is stretched or compressed."
+    "question": "What is the correct format specifier for printing an integer using printf?",
+    "options": ["%c", "%d", "%f", "%s"],
+    "answer": 1,
+    "explanation": "`%d` is the format specifier for integers."
   },
   {
-    "question": "What is the fundamental unit of electric current?",
-    "options": ["Volt", "Ohm", "Ampere", "Watt"],
-    "answer": 2,
-    "explanation": "The Ampere (A) is the SI unit of electric current."
+    "question": "Which function is used to take input from the user in C?",
+    "options": ["input()", "scanf()", "cin", "read()"],
+    "answer": 1,
+    "explanation": "`scanf()` is used to read input from the user in C."
   },
   {
-    "question": "Which of the following is a scalar quantity?",
-    "options": ["Velocity", "Displacement", "Temperature", "Force"],
-    "answer": 2,
-    "explanation": "Temperature is a scalar; it has magnitude only."
+    "question": "What will `printf(\"%d\", 5+2);` output?",
+    "options": ["7", "5", "2", "52"],
+    "answer": 0,
+    "explanation": "`5 + 2` evaluates to 7, and `%d` prints an integer."
   },
   {
-    "question": "What is the solution called when a solvent dissolves a solute?",
-    "options": ["Suspension", "Colloid", "Mixture", "Solution"],
+    "question": "How do you declare an integer variable in C?",
+    "options": ["int x;", "integer x;", "x = int;", "x int;"],
+    "answer": 0,
+    "explanation": "The correct syntax for declaring an integer variable is `int x;`."
+  },
+  {
+    "question": "Which of these is the correct way to initialize an integer variable?",
+    "options": ["int x = 10;", "int x == 10;", "int x := 10;", "int = x 10;"],
+    "answer": 0,
+    "explanation": "`int x = 10;` is the proper way to initialize an integer variable."
+  },
+  {
+    "question": "Which format specifier is used for reading a float using scanf?",
+    "options": ["%d", "%f", "%c", "%s"],
+    "answer": 1,
+    "explanation": "`%f` is used to read float values."
+  },
+  {
+    "question": "What will be the output of: `printf(\"%c\", 'A');`?",
+    "options": ["A", "65", "Error", "'A'"],
+    "answer": 0,
+    "explanation": "`%c` prints a character; 'A' is printed."
+  },
+  {
+    "question": "Which of these can be used in an if condition?",
+    "options": ["if(x == 5)", "if x = 5", "if x := 5", "if x equal 5"],
+    "answer": 0,
+    "explanation": "The correct syntax is `if(x == 5)`."
+  },
+  {
+    "question": "Which of these is a correct if-else syntax?",
+    "options": [
+      "if(x > 0) then x++; else x--;",
+      "if(x > 0) { x++; } else { x--; }",
+      "if x > 0: x++; else: x--;",
+      "if x > 0 x++; else x--;"
+    ],
+    "answer": 1,
+    "explanation": "C uses braces `{}` for block structures in if-else statements."
+  },
+  {
+    "question": "Which operator is used for 'equal to' in an if condition?",
+    "options": ["=", "==", "===", ":="],
+    "answer": 1,
+    "explanation": "`==` is used for comparison in C."
+  },
+  {
+    "question": "What is the output of `if(0) printf(\"Hello\");`?",
+    "options": ["Hello", "0", "Error", "Nothing"],
     "answer": 3,
-    "explanation": "A solution is a homogeneous mixture formed when a solute dissolves in a solvent."
+    "explanation": "`if(0)` evaluates to false, so the block is skipped."
   },
   {
-    "question": "What is the volume of a sphere with radius r?",
-    "options": ["(4/3)πr^3", "4πr^2", "πr^2", "(1/3)πr^3"],
+    "question": "Which keyword is used to write a switch statement?",
+    "options": ["select", "switch", "case", "default"],
+    "answer": 1,
+    "explanation": "`switch` is the keyword for a multi-way branching statement."
+  },
+  {
+    "question": "What is the purpose of the `default` case in a switch statement?",
+    "options": ["To exit the loop", "To match the first case", "To execute when no other case matches", "To reset values"],
+    "answer": 2,
+    "explanation": "`default` is executed when none of the `case` labels match the switch expression."
+  },
+  {
+    "question": "Which of the following is a valid switch statement syntax?",
+    "options": [
+      "switch x { case 1: break; }",
+      "switch(x) { case 1: break; }",
+      "select(x) { case 1: break; }",
+      "switch(x): case 1: break;"
+    ],
+    "answer": 1,
+    "explanation": "The proper syntax is `switch(x) { ... }`."
+  },
+  {
+    "question": "What is required at the end of each `case` in a switch?",
+    "options": ["continue;", "stop;", "break;", "exit;"],
+    "answer": 2,
+    "explanation": "`break;` prevents fall-through to the next case."
+  },
+  {
+    "question": "Which of these declares a float variable?",
+    "options": ["float x;", "decimal x;", "real x;", "float = x;"],
     "answer": 0,
-    "explanation": "The volume of a sphere is (4/3)πr^3."
+    "explanation": "`float x;` correctly declares a float variable."
   },
   {
-    "question": "In optics, what is the focal point of a lens?",
-    "options": ["Point where light rays converge", "Point where light rays diverge", "Center of the lens", "Point of reflection"],
+    "question": "What does `scanf(\"%d\", &x);` do?",
+    "options": [
+      "Reads a float into x",
+      "Reads an integer into x",
+      "Prints the value of x",
+      "Increments x by 1"
+    ],
+    "answer": 1,
+    "explanation": "`scanf(\"%d\", &x);` reads an integer value into variable `x`."
+  },
+  {
+    "question": "What does `&x` mean in `scanf`?",
+    "options": ["Value of x", "Address of x", "Type of x", "Size of x"],
+    "answer": 1,
+    "explanation": "`&x` gives the memory address of `x`, required by `scanf()`."
+  },
+  {
+    "question": "Which of these is a correct character declaration?",
+    "options": ["char c = 'A';", "char c = \"A\";", "character c = A;", "char = 'A';"],
     "answer": 0,
-    "explanation": "The focal point is where parallel light rays converge after passing through a lens."
+    "explanation": "Characters in C are declared with single quotes and the `char` type."
   },
   {
-    "question": "Which number is irrational?",
-    "options": ["22/7", "√2", "3", "0.5"],
-    "answer": 1,
-    "explanation": "√2 cannot be expressed as a fraction and is therefore irrational."
+    "question": "What does the following print? `printf(\"%d\", sizeof(int));`",
+    "options": ["4", "2", "Depends on compiler", "Undefined"],
+    "answer": 2,
+    "explanation": "`sizeof(int)` depends on the compiler and system architecture."
   },
   {
-    "question": "What does Newton’s First Law state?",
-    "options": ["Force equals mass times acceleration", "An object in motion stays in motion unless acted on by a net force", "For every action, there is an equal and opposite reaction", "Energy cannot be created or destroyed"],
-    "answer": 1,
-    "explanation": "Newton’s First Law is the law of inertia: objects maintain their state of motion unless acted upon by a force."
+    "question": "Which of the following is used to comment a single line in C?",
+    "options": ["// comment", "/* comment */", "# comment", "-- comment"],
+    "answer": 0,
+    "explanation": "`//` is used for single-line comments in C."
   },
   {
-    "question": "Which process converts glucose into energy in cells?",
-    "options": ["Photosynthesis", "Respiration", "Fermentation", "Diffusion"],
+    "question": "What is the purpose of `return 0;` in `main()`?",
+    "options": ["End program", "Indicate success", "Nothing", "Clear memory"],
     "answer": 1,
-    "explanation": "Cellular respiration breaks down glucose to produce energy."
+    "explanation": "`return 0;` signals successful program execution to the OS."
+  },
+  {
+    "question": "Which format specifier is used for a character in printf?",
+    "options": ["%c", "%s", "%d", "%x"],
+    "answer": 0,
+    "explanation": "`%c` is used to print a single character."
+  },
+  {
+    "question": "Which of the following is a valid variable name?",
+    "options": ["1value", "_value", "value!", "int"],
+    "answer": 1,
+    "explanation": "Variable names can begin with an underscore and can't be keywords."
+  },
+  {
+    "question": "Can you nest if-else statements in C?",
+    "options": ["Yes", "No", "Only once", "Only inside switch"],
+    "answer": 0,
+    "explanation": "Yes, C supports nested if-else blocks."
+  },
+  {
+    "question": "Which keyword is used to terminate a `switch` case?",
+    "options": ["stop", "return", "break", "exit"],
+    "answer": 2,
+    "explanation": "`break` ends the execution of a `case` in a `switch`."
+  },
+  {
+    "question": "Which keyword defines a constant variable in C?",
+    "options": ["static", "const", "final", "define"],
+    "answer": 1,
+    "explanation": "`const` is used to declare constant variables in C."
+  },
+  {
+    "question": "What is the output of `printf(\"%d\", 3 == 3);`?",
+    "options": ["True", "1", "3", "0"],
+    "answer": 1,
+    "explanation": "`3 == 3` evaluates to 1 (true) in C."
   }
 ]
