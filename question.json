@@ -1,212 +1,122 @@
 [
   {
-    "question": "Which of the following is a primary color?",
-    "options": ["Green", "Purple", "Red", "Orange"],
-    "answer": 2,
-    "explanation": "Red is one of the three traditional primary colors (red, yellow, blue).",
-    "gif": "https://media.giphy.com/media/3o7TKxOhj1ZJr7x7Ti/giphy.gif"
-  },
-  {
-    "question": "What are the primary colors?",
-    "options": ["Red, Yellow, Blue", "Green, Orange, Purple", "Red, Green, Blue", "Black, White, Grey"],
+    "question": "What is the derivative of f(x) = 5x^3 - 2x + 7?",
+    "options": ["15x^2 - 2", "5x^2 - 2", "15x^2 + 2", "5x^3 - 2x"],
     "answer": 0,
-    "explanation": "The traditional primary colors used in art are red, yellow, and blue. These cannot be created by mixing other colors.",
-    "gif": "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
+    "explanation": "Using the power rule, the derivative of 5x^3 is 15x^2 and the derivative of -2x is -2."
   },
   {
-    "question": "What color do you get when you mix yellow and blue?",
-    "options": ["Orange", "Purple", "Green", "Brown"],
-    "answer": 2,
-    "explanation": "Yellow and blue are primary colors",
-    "gif": "https://img1.picmix.com/output/stamp/normal/2/1/9/1/2501912_2ddac.gif"
+    "question": "Which law explains the relationship between pressure and volume of a gas at constant temperature?",
+    "options": ["Boyle’s Law", "Charles’s Law", "Avogadro’s Law", "Gay-Lussac’s Law"],
+    "answer": 0,
+    "explanation": "Boyle’s Law states that pressure and volume are inversely proportional at constant temperature."
   },
   {
-    "question": "What color is formed by mixing red and yellow?",
-    "options": ["Green", "Orange", "Purple", "Grey"],
+    "question": "What is the pH of a neutral solution at 25°C?",
+    "options": ["7", "0", "14", "1"],
+    "answer": 0,
+    "explanation": "Neutral solutions have a pH of 7 at 25°C."
+  },
+  {
+    "question": "What is the integral of f(x) = 2x with respect to x?",
+    "options": ["x^2 + C", "2x + C", "x^2/2 + C", "4x + C"],
+    "answer": 0,
+    "explanation": "Integral of 2x dx is x^2 + C, where C is the constant of integration."
+  },
+  {
+    "question": "What is the formula to calculate the acceleration of an object?",
+    "options": ["a = v/t", "a = F/m", "a = m/F", "a = s/t"],
     "answer": 1,
-    "explanation": "Red and yellow mix to form the secondary color orange. ",
-    "gif": "https://img1.picmix.com/output/stamp/normal/2/1/9/1/2501912_2ddac.gif"
+    "explanation": "Newton’s Second Law states acceleration a = Force (F) divided by mass (m)."
   },
   {
-    "question": "What color results from combining red and blue?",
-    "options": ["Green", "Orange", "Yellow", "Purple"],
+    "question": "Which element has the atomic number 6?",
+    "options": ["Carbon", "Nitrogen", "Oxygen", "Helium"],
+    "answer": 0,
+    "explanation": "Carbon has the atomic number 6."
+  },
+  {
+    "question": "What type of bond involves the sharing of electron pairs between atoms?",
+    "options": ["Ionic bond", "Covalent bond", "Metallic bond", "Hydrogen bond"],
+    "answer": 1,
+    "explanation": "Covalent bonds involve sharing electron pairs between atoms."
+  },
+  {
+    "question": "What is the value of sin(90°)?",
+    "options": ["0", "1", "-1", "Undefined"],
+    "answer": 1,
+    "explanation": "sin(90°) equals 1."
+  },
+  {
+    "question": "Which mathematical concept describes the rate of change of a function?",
+    "options": ["Integral", "Derivative", "Limit", "Sum"],
+    "answer": 1,
+    "explanation": "The derivative measures the rate of change of a function."
+  },
+  {
+    "question": "What is the next number in the Fibonacci sequence: 1, 1, 2, 3, 5, 8, ...?",
+    "options": ["10", "13", "15", "12"],
+    "answer": 1,
+    "explanation": "Each number is the sum of the previous two; next is 13."
+  },
+  {
+    "question": "Which of these quantities is a vector?",
+    "options": ["Speed", "Distance", "Acceleration", "Mass"],
+    "answer": 2,
+    "explanation": "Acceleration is a vector because it has both magnitude and direction."
+  },
+  {
+    "question": "What is the term for the energy stored in a stretched or compressed spring?",
+    "options": ["Kinetic energy", "Thermal energy", "Elastic potential energy", "Chemical energy"],
+    "answer": 2,
+    "explanation": "Elastic potential energy is stored in a spring when it is stretched or compressed."
+  },
+  {
+    "question": "What is the fundamental unit of electric current?",
+    "options": ["Volt", "Ohm", "Ampere", "Watt"],
+    "answer": 2,
+    "explanation": "The Ampere (A) is the SI unit of electric current."
+  },
+  {
+    "question": "Which of the following is a scalar quantity?",
+    "options": ["Velocity", "Displacement", "Temperature", "Force"],
+    "answer": 2,
+    "explanation": "Temperature is a scalar; it has magnitude only."
+  },
+  {
+    "question": "What is the solution called when a solvent dissolves a solute?",
+    "options": ["Suspension", "Colloid", "Mixture", "Solution"],
     "answer": 3,
-    "explanation": "Mixing red and blue (primary colors) yields the secondary color purple. ",
-    "gif": "https://img1.picmix.com/output/stamp/normal/2/1/9/1/2501912_2ddac.gif"
+    "explanation": "A solution is a homogeneous mixture formed when a solute dissolves in a solvent."
   },
   {
-    "question": "If you mix all three primary colors (red, yellow, blue), what is the likely result?",
-    "options": ["Bright green", "Vivid pink", "Muddy brown", "Clean white"],
-    "answer": 2,
-    "explanation": "Combining all three traditional primaries typically yields a muddy brown shade. ",
-    "gif": "https://media.giphy.com/media/l0HlRzrfS3o9jyY5q/giphy.gif"
-  },
-  {
-    "question": "Which do you smell when smelling a fresh rose?",
-    "options": ["Good smell", "Bad smell", "Odorless", "Spicy smell"],
+    "question": "What is the volume of a sphere with radius r?",
+    "options": ["(4/3)πr^3", "4πr^2", "πr^2", "(1/3)πr^3"],
     "answer": 0,
-    "explanation": "A fresh rose usually emits a pleasant, good smell.",
-    "gif": "https://acegif.com/wp-content/uploads/roses-12.gif"
+    "explanation": "The volume of a sphere is (4/3)πr^3."
   },
   {
-    "question": "What type of smell do rotten eggs generally have?",
-    "options": ["Good smell", "Bad smell", "Odorless", "Sweet smell"],
-    "answer": 1,
-    "explanation": "Rotten eggs have a bad, sulphurous smell.",
-    "gif": "https://www.cdn.fortisbc.com/libraries/images/default-source/blogs/23-005.3_gasodour_blog_egg-jump_700wide-anim.gif?sfvrsn=5803ecff_1"
-  },
-  {
-    "question": "How would you describe the smell of clean water?",
-    "options": ["Good smell", "Bad smell", "Odorless", "Fruity smell"],
-    "answer": 2,
-    "explanation": "Clean water is typically odorless.",
-    "gif": "https://media.giphy.com/media/3ohs4xjL5neG4jWTDi/giphy.gif"
-  },
-  {
-    "question": "Which type of matter keeps its shape and size?",
-    "options": ["Solid", "Liquid", "Gas", "Plasma"],
+    "question": "In optics, what is the focal point of a lens?",
+    "options": ["Point where light rays converge", "Point where light rays diverge", "Center of the lens", "Point of reflection"],
     "answer": 0,
-    "explanation": "Solids stay the same shape and size. They don’t change unless you force them.",
-    "gif": "https://techiclucas.weebly.com/uploads/3/9/0/6/39067289/4888409_orig.gif"
+    "explanation": "The focal point is where parallel light rays converge after passing through a lens."
   },
   {
-    "question": "Which type of matter changes shape but keeps the same amount?",
-    "options": ["Solid", "Liquid", "Gas", "Plasma"],
+    "question": "Which number is irrational?",
+    "options": ["22/7", "√2", "3", "0.5"],
     "answer": 1,
-    "explanation": "Liquids take the shape of the container but keep the same amount inside.",
-    "gif": "https://techiclucas.weebly.com/uploads/3/9/0/6/39067289/4888409_orig.gif"
+    "explanation": "√2 cannot be expressed as a fraction and is therefore irrational."
   },
   {
-    "question": "Which type of matter changes both shape and size?",
-    "options": ["Solid", "Liquid", "Gas", "Plasma"],
-    "answer": 2,
-    "explanation": "Gases fill all the space they can. They don’t have a fixed shape or size.",
-    "gif": "https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif"
-  },
-  {
-    "question": "Which one is not a normal type of matter?",
-    "options": ["Solid", "Plasma", "Crystal", "Gas"],
-    "answer": 2,
-    "explanation": "A crystal is a kind of solid, not a basic type of matter like solid, liquid, gas, or plasma.",
-    "gif": "https://techiclucas.weebly.com/uploads/3/9/0/6/39067289/4888409_orig.gif"
-  },
-  {
-    "question": "What is the process called when ice turns into water?",
-    "options": ["Freezing", "Melting", "Evaporation", "Condensation"],
+    "question": "What does Newton’s First Law state?",
+    "options": ["Force equals mass times acceleration", "An object in motion stays in motion unless acted on by a net force", "For every action, there is an equal and opposite reaction", "Energy cannot be created or destroyed"],
     "answer": 1,
-    "explanation": "Melting is the process of a solid becoming a liquid.",
-    "gif": "https://media.giphy.com/media/l1J3preURPiwjRPvG/giphy.gif"
+    "explanation": "Newton’s First Law is the law of inertia: objects maintain their state of motion unless acted upon by a force."
   },
   {
-    "question": "What is it called when water vapor turns into liquid water?",
-    "options": ["Evaporation", "Sublimation", "Condensation", "Freezing"],
-    "answer": 2,
-    "explanation": "Condensation is the phase change from gas to liquid. ",
-    "gif": "https://media.giphy.com/media/l1J3preURPiwjRPvG/giphy.gif"
-  },
-  {
-    "question": "When water freezes into ice, this phase change is called ____.",
-    "options": ["Melting", "Freezing", "Evaporation", "Sublimation"],
+    "question": "Which process converts glucose into energy in cells?",
+    "options": ["Photosynthesis", "Respiration", "Fermentation", "Diffusion"],
     "answer": 1,
-    "explanation": "Freezing refers to a liquid becoming a solid.",
-    "gif": "https://media.giphy.com/media/l1J3preURPiwjRPvG/giphy.gif"
-  },
-  {
-    "question": "When ice turns directly into water vapor, bypassing liquid, it’s called ____.",
-    "options": ["Condensation", "Sublimation", "Deposition", "Evaporation"],
-    "answer": 1,
-    "explanation": "Sublimation is the transition directly from solid to gas. ",
-    "gif": "https://media.giphy.com/media/l1J3preURPiwjRPvG/giphy.gif"
-  },
-  {
-    "question": "How should you handle a gas in a sealed container?",
-    "options": ["Allow it to expand freely", "Release pressure slowly", "Melt it", "Freeze it"],
-    "answer": 1,
-    "explanation": "To safely handle a pressurized gas, release any pressure slowly and carefully.",
-    "gif": "https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif"
-  },
-  {
-    "question": "What’s the safest way to handle boiling liquid?",
-    "options": ["Leave it unattended", "Use protective gear and handle carefully", "Taste it", "Stir with bare hands"],
-    "answer": 1,
-    "explanation": "Protective gear and careful handling are essential for safety.",
-    "gif": "https://ugokawaii.com/wp-content/uploads/2023/03/guitar.gif"
-  },
-  {
-    "question": "How should you deal with an unknown chemical powder?",
-    "options": ["Smell it directly", "Ingest a small amount", "Consult material safety information and wear protection", "Ignore it"],
-    "answer": 2,
-    "explanation": "Always consult safety data and use proper protective equipment.",
-    "gif": "https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif"
-  },
-  {
-    "question": "Which animal is larger in size: an elephant or a mouse?",
-    "options": ["Mouse", "Elephant", "They’re the same", "Depends on species"],
-    "answer": 1,
-    "explanation": "An elephant is much larger than a mouse.",
-    "gif": "https://media.giphy.com/media/3o7aTskHEUdgCQAXde/giphy.gif"
-  },
-  {
-    "question": "Which is smaller: a cat or a giraffe?",
-    "options": ["Giraffe", "Cat", "Same size", "Depends on breed"],
-    "answer": 1,
-    "explanation": "Cats are much smaller than giraffes.",
-    "gif": "https://media.giphy.com/media/3o6ZsYPz7ZrVmVtKH6/giphy.gif"
-  },
-  {
-    "question": "Which animal is larger: a blue whale or a goldfish?",
-    "options": ["Goldfish", "Blue whale", "They’re the same", "Depends on environment"],
-    "answer": 1,
-    "explanation": "A blue whale is the largest animal, far bigger than a goldfish.",
-    "gif": "https://media.giphy.com/media/3oEjI5VtIhHvK37WYo/giphy.gif"
-  },
-  {
-    "question": "Which animal is smaller: a rabbit or a horse?",
-    "options": ["Horse", "Rabbit", "Same size", "Depends on breed"],
-    "answer": 1,
-    "explanation": "Rabbits are significantly smaller than horses.",
-    "gif": "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif"
-  },
-  {
-    "question": "Which animal is larger: a house cat or a kangaroo?",
-    "options": ["House cat", "Kangaroo", "Same size", "Depends on breed/species"],
-    "answer": 1,
-    "explanation": "Kangaroos are generally much larger than house cats.",
-    "gif": "https://media.giphy.com/media/l0MYRzcWP3h1PPRck/giphy.gif"
-  },
-  {
-    "question": "Which is odorless: pure distilled water or vinegar?",
-    "options": ["Vinegar", "Distilled water", "Both have strong smell", "Both are odorless"],
-    "answer": 1,
-    "explanation": "Distilled water is odorless; vinegar has a distinct smell.",
-    "gif": "https://media.giphy.com/media/3o6Zt8zb1L6pB4O20E/giphy.gif"
-  },
-  {
-    "question": "Which animal is smaller: a hamster or a human?",
-    "options": ["Human", "Hamster", "Same size", "Depends on person"],
-    "answer": 1,
-    "explanation": "Hamsters are much smaller than humans.",
-    "gif": "https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif"
-  },
-  {
-    "question": "Which is a neutral (odorless) smell in everyday life?",
-    "options": ["Perfume", "Bleach", "Clean air", "Garbage"],
-    "answer": 2,
-    "explanation": "Clean air is essentially odorless in normal conditions.",
-    "gif": "https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif"
-  },
-  {
-    "question": "Which animal is larger: an owl or an ant?",
-    "options": ["Ant", "Owl", "Same size", "Depends on species"],
-    "answer": 1,
-    "explanation": "Owls are much larger than ants.",
-    "gif": "https://media.giphy.com/media/SWnVjLEgh4lEc/giphy.gif"
-  },
-  {
-    "question": "What phase change occurs when water boils and becomes steam?",
-    "options": ["Freezing", "Condensation", "Evaporation", "Melting"],
-    "answer": 2,
-    "explanation": "Evaporation (or boiling) is the change from liquid to gas. ",
-    "gif": "https://media.giphy.com/media/3o6ZsZkJux1DPZWSbm/giphy.gif"
+    "explanation": "Cellular respiration breaks down glucose to produce energy."
   }
 ]
