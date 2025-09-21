@@ -75,7 +75,7 @@
       display: block;
       width: 100%;
       max-width: 200px;
-      margin: 0 auto 20px;
+      margin: 10px auto 20px;
       padding: 12px 20px;
       font-size: 1.1rem;
       box-shadow: 0px 0px 5px black;
@@ -152,6 +152,38 @@
       display: none;
     }
 
+    #jsonInputContainer {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      background: rgba(255,255,255,0.95);
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+    }
+
+    #jsonInput {
+      width: 100%;
+      height: 160px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    #copyExampleBtn {
+      max-width: 200px;
+      margin: 10px auto 0;
+      background-color: #28a745;
+    }
+
+    #copyExampleBtn:hover {
+      background-color: #218838;
+    }
+
     @media screen and (max-width: 480px) {
       h1 {
         font-size: 8vw;
@@ -180,10 +212,19 @@
 
 <h1>🧠Quiz</h1>
 
+<div id="jsonInputContainer">
+  <textarea id="jsonInput" placeholder="Paste your JSON questions here..."></textarea>
+  <button id="addQuestionsBtn">➕ Add Questions</button>
+  <button id="copyExampleBtn">📋 Copy Example & Prompt</button>
+  <p style="font-size: 0.9rem; color: #555; text-align: center; margin-top: 10px;">
+    Paste your AI-generated questions JSON in the box above, then click "Add Questions" to start the quiz.<br>
+    Use the "Copy Example & Prompt" button to get a ready-to-use example and prompt for AI.
+  </p>
+</div>
+
 <div id="mainContent">
   <div id="quiz"></div>
   <button id="nextBtn" disabled>Next</button>
-  <button id="addQuestionBtn">➕ Make a Question</button>
 </div>
 
 <div id="gifContainer"></div>
@@ -205,18 +246,20 @@
   const resultDiv = document.getElementById('result');
   const mainContent = document.getElementById('mainContent');
   const audioPlayer = document.getElementById('audioPlayer');
-  const addQuestionBtn = document.getElementById('addQuestionBtn');
 
-  // Start with a sample question so quiz is not empty
+  const jsonInput = document.getElementById('jsonInput');
+  const addQuestionsBtn = document.getElementById('addQuestionsBtn');
+  const copyExampleBtn = document.getElementById('copyExampleBtn');
+
+  // Start with one sample question
   questions = [
-  {
-    "question": "Do you atleast give 10 minutes of ur time to God?",
-    "options": ["yes","no"],
-    "answer": 0,
-    "explanation": "But God won't give up on you"
-  }
- 
-];
+    {
+      "question": "Do you at least give 10 minutes of your time to God?",
+      "options": ["Yes", "No"],
+      "answer": 0,
+      "explanation": "But God won't give up on you."
+    }
+  ];
 
   function showQuestion() {
     explanationDiv.textContent = '';
@@ -224,6 +267,7 @@
     explanationDiv.classList.remove('show');
     gifContainer.classList.remove('show');
     mainContent.classList.remove('hidden');
+    resultDiv.textContent = '';
 
     nextBtn.disabled = true;
     isShowingExplanation = false;
@@ -313,14 +357,60 @@
     explanationDiv.textContent = '';
     gifContainer.innerHTML = '';
     nextBtn.style.display = 'none';
-    addQuestionBtn.style.display = 'none';
     resultDiv.textContent = `🎉 Quiz finished! You scored ${score} out of ${questions.length}.`;
   }
 
-  // Button for adding questions manually
-  addQuestionBtn.addEventListener('click', () => {
-    const example = `// copy and generate questions from ai using this format and\n  paste your questions in this JSON format just copy all and paste then copy and paste the result from ai:\n
-[
+  // Add questions from textarea
+  addQuestionsBtn.addEventListener('click', () => {
+    const input = jsonInput.value.trim();
+    if (!input) {
+      alert("Please paste your questions JSON in the box above.");
+      return;
+    }
+
+    try {
+      // Remove comments if any
+      let cleanInput = input.replace(/\/\/.*$/gm, '').trim();
+      let newQuestions = JSON.parse(cleanInput);
+
+      if (!Array.isArray(newQuestions)) {
+        newQuestions = [newQuestions];
+      }
+
+      const validQuestions = newQuestions.filter(q =>
+        typeof q.question === 'string' &&
+        Array.isArray(q.options) &&
+        typeof q.answer === 'number' &&
+        typeof q.explanation === 'string'
+      );
+
+      if (validQuestions.length === 0) {
+        alert("❌ No valid questions found in the input!");
+        return;
+      }
+
+      questions = questions.concat(validQuestions);
+      alert(`✅ Added ${validQuestions.length} question(s)! Starting quiz from the beginning.`);
+
+      // Reset quiz state
+      currentQuestionIndex = 0;
+      score = 0;
+      nextBtn.style.display = 'inline-block';
+      resultDiv.textContent = '';
+      showQuestion();
+
+      // Clear textarea
+      jsonInput.value = '';
+
+    } catch (e) {
+      alert('❌ Invalid JSON format! Please fix and try again.');
+      console.error(e);
+    }
+  });
+
+  // Copy example JSON + prompt to clipboard
+  copyExampleBtn.addEventListener('click', () => {
+    const exampleJSON = `[
   {
     "question": "What is the Law of Conservation of Energy?",
     "options": [
@@ -345,50 +435,29 @@
   }
 ]`;
 
-    let input = prompt(
-      `Paste your questions here in JSON format.\n\nExample format:\n${example}\n\nYou can add as many questions as you want following this format.`
-    );
+    const promptText = `Generate a quiz with at least 20 questions using this JSON format:
 
-    if (!input) return;
+- "question": The question text (string)
+- "options": An array of answer options (array of strings)
+- "answer": The index (0-based) of the correct option (number)
+- "explanation": A short explanation shown when the answer is wrong (string)
 
-    try {
-      // Remove comment lines if any
-      input = input.replace(/\/\/.*$/gm, '').trim();
+Please generate a JSON array with this format so I can paste it into the quiz app.`;
 
-      let newQuestions = JSON.parse(input);
+    const fullText = `// Copy everything below and paste to your AI prompt to generate quiz questions:
 
-      if (!Array.isArray(newQuestions)) {
-        newQuestions = [newQuestions];
-      }
+${promptText}
 
-      const validQuestions = newQuestions.filter(q =>
-        typeof q.question === 'string' &&
-        Array.isArray(q.options) &&
-        typeof q.answer === 'number' &&
-        typeof q.explanation === 'string'
-      );
+Example JSON format:
 
-      if (validQuestions.length === 0) {
-        alert("❌ No valid questions found in the input!");
-        return;
-      }
+${exampleJSON}
+`;
 
-      // Append new questions
-      questions = questions.concat(validQuestions);
-      alert(`✅ Added ${validQuestions.length} question(s)! Starting quiz from the beginning.`);
-
-      // Reset quiz state
-      currentQuestionIndex = 0;
-      score = 0;
-      nextBtn.style.display = 'inline-block';
-      addQuestionBtn.style.display = 'inline-block';
-      resultDiv.textContent = '';
-      showQuestion();
-
-    } catch (e) {
-      alert('❌ Invalid JSON format! Please fix and try again.');
-      console.error(e);
-    }
+    navigator.clipboard.writeText(fullText).then(() => {
+      alert('✅ Example JSON format and prompt copied to clipboard! Paste it into your AI and generate questions.');
+    }, () => {
+      alert('❌ Failed to copy to clipboard. Please copy manually:\n\n' + fullText);
+    });
   });
 
   // Initialize quiz display
