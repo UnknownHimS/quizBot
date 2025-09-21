@@ -182,7 +182,7 @@
 
 <div id="mainContent">
   <div id="quiz"></div>
-  <button id="nextBtn">Next</button>
+  <button id="nextBtn" disabled>Next</button>
   <button id="addQuestionBtn">➕ Make a Question</button>
 </div>
 
@@ -205,18 +205,17 @@
   const resultDiv = document.getElementById('result');
   const mainContent = document.getElementById('mainContent');
   const audioPlayer = document.getElementById('audioPlayer');
+  const addQuestionBtn = document.getElementById('addQuestionBtn');
 
-  nextBtn.disabled = true;
-
-  async function loadQuestions() {
-    try {
-      const res = await fetch('question.json');
-      questions = await res.json();
-      showQuestion();
-    } catch (error) {
-      quizContainer.innerHTML = "Failed to load questions.";
+  // Start with a sample question so quiz is not empty
+  questions = [
+    {
+      question: "Which function is used to print output to the screen in C?",
+      options: ["print()", "printf()", "cout", "echo"],
+      answer: 1,
+      explanation: "`printf()` is the standard function used in C to print output to the console."
     }
-  }
+  ];
 
   function showQuestion() {
     explanationDiv.textContent = '';
@@ -227,6 +226,11 @@
 
     nextBtn.disabled = true;
     isShowingExplanation = false;
+
+    if (currentQuestionIndex >= questions.length) {
+      endQuiz();
+      return;
+    }
 
     const q = questions[currentQuestionIndex];
     quizContainer.innerHTML = `
@@ -297,7 +301,7 @@
         } else {
           endQuiz();
         }
-      }, 10000);
+      }, 10000); // Show explanation for 10 seconds
     }
 
     nextBtn.disabled = true;
@@ -308,20 +312,53 @@
     explanationDiv.textContent = '';
     gifContainer.innerHTML = '';
     nextBtn.style.display = 'none';
-    document.getElementById('addQuestionBtn').style.display = 'none';
+    addQuestionBtn.style.display = 'none';
     resultDiv.textContent = `🎉 Quiz finished! You scored ${score} out of ${questions.length}.`;
   }
 
-  // ✅ Add Question Button (Manual Input)
-  document.getElementById('addQuestionBtn').addEventListener('click', () => {
-    const userInput = prompt("Paste your JSON question or array of questions:");
+  // Button for adding questions manually
+  addQuestionBtn.addEventListener('click', () => {
+    const example = `// Paste your questions in this JSON format:\n
+[
+  {
+    "question": "What is the Law of Conservation of Energy?",
+    "options": [
+      "Energy can be created",
+      "Energy cannot be created or destroyed",
+      "Energy is lost",
+      "Energy is infinite"
+    ],
+    "answer": 1,
+    "explanation": "The Law of Conservation of Energy states that energy cannot be created or destroyed, only transformed."
+  },
+  {
+    "question": "Who formulated the Law of Conservation of Mass?",
+    "options": [
+      "Einstein",
+      "Lavoisier",
+      "Newton",
+      "Curie"
+    ],
+    "answer": 1,
+    "explanation": "Antoine Lavoisier formulated the Law of Conservation of Mass."
+  }
+]`;
 
-    if (!userInput) return;
+    let input = prompt(
+      `Paste your questions here in JSON format.\n\nExample format:\n${example}\n\nYou can add as many questions as you want following this format.`
+    );
+
+    if (!input) return;
 
     try {
-      let newQuestions = JSON.parse(userInput);
+      // Remove comment lines if any
+      input = input.replace(/\/\/.*$/gm, '').trim();
 
-      if (!Array.isArray(newQuestions)) newQuestions = [newQuestions];
+      let newQuestions = JSON.parse(input);
+
+      if (!Array.isArray(newQuestions)) {
+        newQuestions = [newQuestions];
+      }
 
       const validQuestions = newQuestions.filter(q =>
         typeof q.question === 'string' &&
@@ -330,21 +367,32 @@
         typeof q.explanation === 'string'
       );
 
-      if (validQuestions.length > 0) {
-        questions = questions.concat(validQuestions);
-        alert(`✅ ${validQuestions.length} question(s) added!`);
-        if (currentQuestionIndex >= questions.length) {
-          showQuestion();
-        }
-      } else {
-        alert("❌ No valid questions found. Check your format.");
+      if (validQuestions.length === 0) {
+        alert("❌ No valid questions found in the input!");
+        return;
       }
-    } catch (err) {
-      alert("❌ Invalid JSON. Please check your syntax.");
+
+      // Append new questions
+      questions = questions.concat(validQuestions);
+      alert(`✅ Added ${validQuestions.length} question(s)! Starting quiz from the beginning.`);
+
+      // Reset quiz state
+      currentQuestionIndex = 0;
+      score = 0;
+      nextBtn.style.display = 'inline-block';
+      addQuestionBtn.style.display = 'inline-block';
+      resultDiv.textContent = '';
+      showQuestion();
+
+    } catch (e) {
+      alert('❌ Invalid JSON format! Please fix and try again.');
+      console.error(e);
     }
   });
 
-  loadQuestions();
+  // Initialize quiz display
+  showQuestion();
 </script>
+
 </body>
 </html>
