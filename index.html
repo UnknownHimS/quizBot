@@ -4,321 +4,347 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quiz</title>
-  
-  
+
   <link rel="icon" type="image/png" href="https://wiki.mushureport.com/images/thumb/f/fc/Lore.png/417px-Lore.png?20230131184640">
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: #333;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 10px;
+      position: relative;
+      z-index: 0;
+    }
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  color: #333;
-  min-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: 10px;
-  position: relative;
-  z-index: 0;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vh;       /* swap height and width */
-  height: 100vw;
-  background-image: url('https://i.pinimg.com/1200x/0c/a0/9b/0ca09b949cf0fdb704e5d21c1587b4f2.jpg');
-  background-size: cover;
-  background-position: center;
-  transform: rotate(90deg) translateY(-100%);
-  transform-origin: top left;
-  z-index: -1;
-}
-
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vh;
+      height: 100vw;
+      background-image: url('https://i.pinimg.com/1200x/0c/a0/9b/0ca09b949cf0fdb704e5d21c1587b4f2.jpg');
+      background-size: cover;
+      background-position: center;
+      transform: rotate(90deg) translateY(-100%);
+      transform-origin: top left;
+      z-index: -1;
+    }
 
     h1 {
-    text-align: center;
-    margin: 20px 0;
-    color: white;
-    text-shadow: 0px 0px 1px red;
-    font-size: 4 rem;
-    font-style:cursive, sans-serif;
-  }
+      text-align: center;
+      margin: 20px 0;
+      color: white;
+      text-shadow: 0px 0px 1px red;
+      font-size: 4rem;
+      font-style: cursive, sans-serif;
+    }
 
-  #mainContent {
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-    transition: all 0.4s ease;
-    padding: 0 15px;
-    
-  }
+    #mainContent {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      transition: all 0.4s ease;
+      padding: 0 15px;
+    }
 
-  #mainContent.hidden {
-    display: none;
-  }
+    #mainContent.hidden {
+      display: none;
+    }
 
-  .question-box {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3), inset 0px 0px 1px red;
-    margin-bottom: 20px;
-    
-  }
-  
-
-  .option {
-    display: block;
-    margin: 10px 0;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-
-  button {
-    display: block;
-    width: 100%;
-    max-width: 200px;
-    margin: 0 auto 20px;
-    padding: 12px 20px;
-    font-size: 1.1rem;
-    box-shadow: 0px 0px 5px black;
-    background-color: #007bff;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  button:disabled {
-    background-color: #999;
-    cursor: not-allowed;
-  }
-
-  button:hover:not(:disabled) {
-    background-color: #0056b3;
-  }
-
-  #gifContainer {
-    position: fixed;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    text-align: center;
-    z-index: 999;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-
-  #gifContainer img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 8px;
-  }
-
-  #explanation {
-    position: fixed;
-    background: white;
-    color: black;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    padding: 20px;
-    box-shadow: 0px 0px 5px black;
-    font-size: 1.3rem;
-    text-align: center;
-    z-index: 999;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    border-radius: 8px;
-  }
-
-  #gifContainer.show,
-  #explanation.show {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  #result {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: green;
-    margin-top: 20px;
-  }
-
-  audio {
-    display: none;
-  }
-
-  @media screen and (max-width: 480px) {
-    h1 {
-      font-size: 8vw;
+    .question-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3), inset 0px 0px 1px red;
+      margin-bottom: 20px;
     }
 
     .option {
-      font-size: 0.95rem;
-    }
-
-    #explanation {
+      display: block;
+      margin: 10px 0;
       font-size: 1rem;
+      cursor: pointer;
     }
 
     button {
-      font-size: 1rem;
-      padding: 10px 15px;
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto 20px;
+      padding: 12px 20px;
+      font-size: 1.1rem;
+      box-shadow: 0px 0px 5px black;
+      background-color: #007bff;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:disabled {
+      background-color: #999;
+      cursor: not-allowed;
+    }
+
+    button:hover:not(:disabled) {
+      background-color: #0056b3;
+    }
+
+    #gifContainer {
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90%;
+      text-align: center;
+      z-index: 999;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
     }
 
     #gifContainer img {
-      max-width: 90%;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
     }
-  }
-</style>
 
+    #explanation {
+      position: fixed;
+      background: white;
+      color: black;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90%;
+      padding: 20px;
+      box-shadow: 0px 0px 5px black;
+      font-size: 1.3rem;
+      text-align: center;
+      z-index: 999;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      border-radius: 8px;
+    }
+
+    #gifContainer.show,
+    #explanation.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #result {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: green;
+      margin-top: 20px;
+    }
+
+    audio {
+      display: none;
+    }
+
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 8vw;
+      }
+
+      .option {
+        font-size: 0.95rem;
+      }
+
+      #explanation {
+        font-size: 1rem;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 10px 15px;
+      }
+
+      #gifContainer img {
+        max-width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <h1>🧠Quiz</h1>
+<h1>🧠Quiz</h1>
 
-  <div id="mainContent">
-    <div id="quiz"></div>
-    <button id="nextBtn">Next</button>
-  </div>
+<div id="mainContent">
+  <div id="quiz"></div>
+  <button id="nextBtn">Next</button>
+  <button id="addQuestionBtn">➕ Make a Question</button>
+</div>
 
-  <div id="gifContainer"></div>
-  <div id="explanation"></div>
-  <div id="result"></div>
+<div id="gifContainer"></div>
+<div id="explanation"></div>
+<div id="result"></div>
 
-  <audio id="audioPlayer" preload="auto"></audio>
+<audio id="audioPlayer" preload="auto"></audio>
 
-  <script>
-    let questions = [];
-    let currentQuestionIndex = 0;
-    let score = 0;
-    let isShowingExplanation = false;
+<script>
+  let questions = [];
+  let currentQuestionIndex = 0;
+  let score = 0;
+  let isShowingExplanation = false;
 
-    const quizContainer = document.getElementById('quiz');
-    const nextBtn = document.getElementById('nextBtn');
-    const explanationDiv = document.getElementById('explanation');
-    const gifContainer = document.getElementById('gifContainer');
-    const resultDiv = document.getElementById('result');
-    const mainContent = document.getElementById('mainContent');
-    const audioPlayer = document.getElementById('audioPlayer');
+  const quizContainer = document.getElementById('quiz');
+  const nextBtn = document.getElementById('nextBtn');
+  const explanationDiv = document.getElementById('explanation');
+  const gifContainer = document.getElementById('gifContainer');
+  const resultDiv = document.getElementById('result');
+  const mainContent = document.getElementById('mainContent');
+  const audioPlayer = document.getElementById('audioPlayer');
+
+  nextBtn.disabled = true;
+
+  async function loadQuestions() {
+    try {
+      const res = await fetch('question.json');
+      questions = await res.json();
+      showQuestion();
+    } catch (error) {
+      quizContainer.innerHTML = "Failed to load questions.";
+    }
+  }
+
+  function showQuestion() {
+    explanationDiv.textContent = '';
+    gifContainer.innerHTML = '';
+    explanationDiv.classList.remove('show');
+    gifContainer.classList.remove('show');
+    mainContent.classList.remove('hidden');
 
     nextBtn.disabled = true;
+    isShowingExplanation = false;
 
-    async function loadQuestions() {
-      try {
-        const res = await fetch('question.json');
-        questions = await res.json();
-        showQuestion();
-      } catch (error) {
-        quizContainer.innerHTML = "Failed to load questions.";
-      }
-    }
+    const q = questions[currentQuestionIndex];
+    quizContainer.innerHTML = `
+      <div class="question-box">
+        <h2>Q${currentQuestionIndex + 1}: ${q.question}</h2>
+        ${q.options.map((opt, i) => `
+          <label class="option">
+            <input type="radio" name="option" value="${i}"> ${opt}
+          </label>
+        `).join('')}
+      </div>
+    `;
 
-    function showQuestion() {
-      explanationDiv.textContent = '';
-      gifContainer.innerHTML = '';
-      explanationDiv.classList.remove('show');
-      gifContainer.classList.remove('show');
-      mainContent.classList.remove('hidden');
-
-      nextBtn.disabled = true;
-      isShowingExplanation = false;
-
-      const q = questions[currentQuestionIndex];
-      quizContainer.innerHTML = `
-        <div class="question-box">
-          <h2>Q${currentQuestionIndex + 1}: ${q.question}</h2>
-          ${q.options.map((opt, i) => `
-            <label class="option">
-              <input type="radio" name="option" value="${i}"> ${opt}
-            </label>
-          `).join('')}
-        </div>
-      `;
-
-      const options = document.querySelectorAll('input[name="option"]');
-      options.forEach(opt => {
-        opt.addEventListener('change', () => {
-          if (!isShowingExplanation) nextBtn.disabled = false;
-        });
+    const options = document.querySelectorAll('input[name="option"]');
+    options.forEach(opt => {
+      opt.addEventListener('change', () => {
+        if (!isShowingExplanation) nextBtn.disabled = false;
       });
+    });
+  }
+
+  function showExplanation(explanation, gif, audio) {
+    isShowingExplanation = true;
+    mainContent.classList.add('hidden');
+
+    explanationDiv.textContent = explanation;
+    gifContainer.innerHTML = gif ? `<img src="${gif}" alt="Explanation GIF" />` : '';
+
+    explanationDiv.classList.add('show');
+    gifContainer.classList.add('show');
+
+    if (audio) {
+      audioPlayer.src = audio;
+      audioPlayer.play();
     }
 
-    function showExplanation(explanation, gif, audio) {
-      isShowingExplanation = true;
+    nextBtn.disabled = true;
+  }
 
-      mainContent.classList.add('hidden'); // Hide quiz content
+  nextBtn.addEventListener('click', () => {
+    if (isShowingExplanation) return;
 
-      explanationDiv.textContent = explanation;
-      gifContainer.innerHTML = gif ? `<img src="${gif}" alt="Explanation GIF" />` : '';
-
-      explanationDiv.classList.add('show');
-      gifContainer.classList.add('show');
-
-      if (audio) {
-        audioPlayer.src = audio;
-        audioPlayer.play();
-      }
-
-      nextBtn.disabled = true;
+    const selected = document.querySelector('input[name="option"]:checked');
+    if (!selected) {
+      alert('Please select an option before proceeding!');
+      return;
     }
 
-    nextBtn.addEventListener('click', () => {
-      if (isShowingExplanation) return;
+    const selectedAnswer = parseInt(selected.value);
+    const correctAnswer = questions[currentQuestionIndex].answer;
 
-      const selected = document.querySelector('input[name="option"]:checked');
-      if (!selected) {
-        alert('Please select an option before proceeding!');
-        return;
+    if (selectedAnswer === correctAnswer) {
+      score++;
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        showQuestion();
+      } else {
+        endQuiz();
       }
+    } else {
+      const { explanation, gif, audio } = questions[currentQuestionIndex];
+      showExplanation(explanation, gif, audio);
 
-      const selectedAnswer = parseInt(selected.value);
-      const correctAnswer = questions[currentQuestionIndex].answer;
-
-      if (selectedAnswer === correctAnswer) {
-        score++;
+      setTimeout(() => {
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
           showQuestion();
         } else {
           endQuiz();
         }
-      } else {
-        const { explanation, gif, audio } = questions[currentQuestionIndex];
-        showExplanation(explanation, gif, audio);
-
-        setTimeout(() => {
-          currentQuestionIndex++;
-          if (currentQuestionIndex < questions.length) {
-            showQuestion();
-          } else {
-            endQuiz();
-          }
-        }, 10000); // 10 seconds delay
-      }
-
-      nextBtn.disabled = true;
-    });
-
-    function endQuiz() {
-      quizContainer.innerHTML = '';
-      explanationDiv.textContent = '';
-      gifContainer.innerHTML = '';
-      nextBtn.style.display = 'none';
-      resultDiv.textContent = `🎉 Quiz finished! You scored ${score} out of ${questions.length}.`;
+      }, 10000);
     }
 
-    loadQuestions();
-  </script>
+    nextBtn.disabled = true;
+  });
+
+  function endQuiz() {
+    quizContainer.innerHTML = '';
+    explanationDiv.textContent = '';
+    gifContainer.innerHTML = '';
+    nextBtn.style.display = 'none';
+    document.getElementById('addQuestionBtn').style.display = 'none';
+    resultDiv.textContent = `🎉 Quiz finished! You scored ${score} out of ${questions.length}.`;
+  }
+
+  // ✅ Add Question Button (Manual Input)
+  document.getElementById('addQuestionBtn').addEventListener('click', () => {
+    const userInput = prompt("Paste your JSON question or array of questions:");
+
+    if (!userInput) return;
+
+    try {
+      let newQuestions = JSON.parse(userInput);
+
+      if (!Array.isArray(newQuestions)) newQuestions = [newQuestions];
+
+      const validQuestions = newQuestions.filter(q =>
+        typeof q.question === 'string' &&
+        Array.isArray(q.options) &&
+        typeof q.answer === 'number' &&
+        typeof q.explanation === 'string'
+      );
+
+      if (validQuestions.length > 0) {
+        questions = questions.concat(validQuestions);
+        alert(`✅ ${validQuestions.length} question(s) added!`);
+        if (currentQuestionIndex >= questions.length) {
+          showQuestion();
+        }
+      } else {
+        alert("❌ No valid questions found. Check your format.");
+      }
+    } catch (err) {
+      alert("❌ Invalid JSON. Please check your syntax.");
+    }
+  });
+
+  loadQuestions();
+</script>
 </body>
 </html>
