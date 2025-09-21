@@ -1,32 +1,216 @@
 [
   {
-    "question": "Which function is used to print output to the screen in C?",
-    "options": ["print()", "printf()", "cout", "echo"],
-    "answer": 1,
-    "explanation": "`printf()` is the standard function used in C to print output to the console."
-  },
-  {
-    "question": "Which header file is required for printf and scanf?",
-    "options": ["math.h", "string.h", "stdio.h", "stdlib.h"],
+    "question": "What does the Law of Conservation of Mass state?",
+    "options": [
+      "Mass can be created and destroyed in chemical reactions.",
+      "Mass is constant only at high temperatures.",
+      "Mass cannot be created or destroyed in a chemical reaction.",
+      "Mass increases during a chemical reaction."
+    ],
     "answer": 2,
-    "explanation": "`stdio.h` contains the declarations for `printf()` and `scanf()`."
+    "explanation": "The Law of Conservation of Mass states that mass cannot be created or destroyed in a chemical reaction. The total mass of reactants equals the total mass of products."
   },
   {
-    "question": "What is the correct format specifier for printing an integer using printf?",
-    "options": ["%c", "%d", "%f", "%s"],
+    "question": "What does the Law of Conservation of Energy state?",
+    "options": [
+      "Energy can be created in chemical reactions.",
+      "Energy is lost during all reactions.",
+      "Energy can be converted from one form to another, but cannot be created or destroyed.",
+      "Energy increases indefinitely in a closed system."
+    ],
+    "answer": 2,
+    "explanation": "The Law of Conservation of Energy states that energy cannot be created or destroyed; it can only change forms (e.g., from chemical to thermal)."
+  },
+  {
+    "question": "What is the Law of Definite Proportions?",
+    "options": [
+      "Elements combine in any ratio to form compounds.",
+      "A compound is made up of elements in a fixed mass ratio.",
+      "The mass of elements can vary in a compound.",
+      "Compounds have random atomic arrangements."
+    ],
     "answer": 1,
-    "explanation": "`%d` is the format specifier for integers."
+    "explanation": "The Law of Definite Proportions states that a given compound always contains the same elements in the exact same proportion by mass."
   },
   {
-    "question": "Which function is used to take input from the user in C?",
-    "options": ["input()", "scanf()", "cin", "read()"],
+    "question": "Who is credited with formulating the Law of Conservation of Mass?",
+    "options": [
+      "Albert Einstein",
+      "John Dalton",
+      "Antoine Lavoisier",
+      "Dmitri Mendeleev"
+    ],
+    "answer": 2,
+    "explanation": "Antoine Lavoisier is credited with formulating the Law of Conservation of Mass in the late 1700s."
+  },
+  {
+    "question": "Which of the following best illustrates the Law of Conservation of Mass?",
+    "options": [
+      "Burning wood and seeing smoke disappear.",
+      "Melting ice into water with no mass change.",
+      "Dissolving sugar into water.",
+      "A nail rusting and gaining mass."
+    ],
     "answer": 1,
-    "explanation": "`scanf()` is used to read input from the user in C."
+    "explanation": "Melting ice into water shows that physical changes do not alter the mass, illustrating mass conservation."
   },
   {
-    "question": "What will `printf(\"%d\", 5+2);` output?",
-    "options": ["7", "5", "2", "52"],
+    "question": "A 10g sample of hydrogen reacts with 80g of oxygen. What is the mass of the resulting water?",
+    "options": ["70g", "80g", "90g", "100g"],
+    "answer": 2,
+    "explanation": "According to the Law of Conservation of Mass, the total mass of reactants equals the total mass of products. 10g + 80g = 90g."
+  },
+  {
+    "question": "Which scenario violates the Law of Definite Proportions?",
+    "options": [
+      "Water always has an H:O mass ratio of 1:8.",
+      "CO2 always contains carbon and oxygen in a fixed ratio.",
+      "Forming a compound with random ratios of sodium and chlorine.",
+      "Salt (NaCl) always contains equal numbers of Na and Cl atoms."
+    ],
+    "answer": 2,
+    "explanation": "Forming a compound with random ratios violates the Law of Definite Proportions, which states the mass ratio is fixed."
+  },
+  {
+    "question": "Which of the following is a chemical reaction that obeys the Law of Conservation of Mass?",
+    "options": [
+      "A log burning and disappearing completely.",
+      "Hydrogen and oxygen forming water with equal total mass.",
+      "Boiling water and watching it evaporate.",
+      "A battery discharging energy."
+    ],
+    "answer": 1,
+    "explanation": "Hydrogen and oxygen forming water demonstrates mass conservation: the mass of reactants equals the mass of products."
+  },
+  {
+    "question": "In a closed system, how does the total energy change during a chemical reaction?",
+    "options": [
+      "It increases.",
+      "It decreases.",
+      "It remains constant.",
+      "It disappears."
+    ],
+    "answer": 2,
+    "explanation": "In a closed system, energy cannot enter or leave, so the total energy remains constant (Law of Conservation of Energy)."
+  },
+  {
+    "question": "Which law explains why 18g of water contains 2g of hydrogen and 16g of oxygen?",
+    "options": [
+      "Law of Multiple Proportions",
+      "Law of Definite Proportions",
+      "Law of Conservation of Mass",
+      "Law of Constant Pressure"
+    ],
+    "answer": 1,
+    "explanation": "The Law of Definite Proportions explains that water always has the same mass ratio of hydrogen to oxygen (2:16)."
+  },
+  {
+    "question": "Which of the following energy changes obeys the Law of Conservation of Energy?",
+    "options": [
+      "Electricity disappearing after powering a lightbulb.",
+      "Lightbulb converting electrical energy into light and heat.",
+      "Energy created from nothing in a nuclear reaction.",
+      "Chemical energy converting into matter."
+    ],
+    "answer": 1,
+    "explanation": "Energy is not lost; it's converted from electrical energy to light and heat in a lightbulb, demonstrating energy conservation."
+  },
+  {
+    "question": "If 5g of magnesium reacts with 20g of oxygen, what is the mass of the product (magnesium oxide)?",
+    "options": ["15g", "20g", "25g", "30g"],
+    "answer": 2,
+    "explanation": "5g + 20g = 25g. The Law of Conservation of Mass says total mass is conserved."
+  },
+  {
+    "question": "Which type of system is required to observe conservation of mass during a reaction?",
+    "options": [
+      "Open system",
+      "Closed system",
+      "Isolated system",
+      "Vacuum"
+    ],
+    "answer": 1,
+    "explanation": "In a closed system, no matter can enter or leave, allowing accurate observation of mass conservation."
+  },
+  {
+    "question": "Why is mass not always observed as conserved in an open system?",
+    "options": [
+      "Mass gets destroyed.",
+      "Atoms disappear.",
+      "Gases may escape into the air.",
+      "Energy converts into mass."
+    ],
+    "answer": 2,
+    "explanation": "In an open system, gases or products can escape, making it appear as if mass is lost."
+  },
+  {
+    "question": "In a chemical reaction, energy is released as heat. Which law is demonstrated?",
+    "options": [
+      "Law of Heat Transfer",
+      "Law of Definite Proportions",
+      "Law of Thermodynamics",
+      "Law of Conservation of Energy"
+    ],
+    "answer": 3,
+    "explanation": "The energy released is not destroyed—it changes form, illustrating the Law of Conservation of Energy."
+  },
+  {
+    "question": "Which of these supports the Law of Definite Proportions?",
+    "options": [
+      "Water made from different sources has the same mass ratio of H to O.",
+      "Mixtures have variable compositions.",
+      "Carbon dioxide can have any ratio of carbon to oxygen.",
+      "Energy can be converted to mass."
+    ],
     "answer": 0,
+    "explanation": "No matter the source, water always has a fixed ratio of H to O, showing the Law of Definite Proportions."
+  },
+  {
+    "question": "What happens to total energy in a chemical reaction in a closed system?",
+    "options": [
+      "It becomes heat only.",
+      "It increases.",
+      "It remains the same.",
+      "It is converted into matter."
+    ],
+    "answer": 2,
+    "explanation": "Total energy remains the same, though it may change forms (chemical, thermal, etc.)."
+  },
+  {
+    "question": "Which of the following is NOT consistent with the Law of Conservation of Mass?",
+    "options": [
+      "Evaporation of alcohol in an open container.",
+      "Reaction in a sealed flask showing no mass change.",
+      "Condensation of steam in a closed system.",
+      "Combustion in a sealed chamber with constant mass."
+    ],
+    "answer": 0,
+    "explanation": "Evaporation in an open container allows mass to escape, violating the observed conservation of mass."
+  },
+  {
+    "question": "What is the purpose of using a sealed container in mass experiments?",
+    "options": [
+      "To speed up the reaction.",
+      "To allow gases to escape.",
+      "To prevent any loss of matter.",
+      "To trap energy."
+    ],
+    "answer": 2,
+    "explanation": "Sealing the container ensures all reactants and products are contained, allowing accurate mass measurements."
+  },
+  {
+    "question": "What does the Law of Conservation of Mass and Energy imply about the universe?",
+    "options": [
+      "Matter and energy are infinite.",
+      "Mass and energy can appear spontaneously.",
+      "The total mass and energy of a closed system remain constant.",
+      "Mass and energy can be destroyed."
+    ],
+    "answer": 2,
+    "explanation": "In a closed system, the total amount of mass and energy remains constant over time."
+  }
+]
+
     "explanation": "`5 + 2` evaluates to 7, and `%d` prints an integer."
   },
   {
