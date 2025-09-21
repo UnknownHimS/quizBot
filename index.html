@@ -212,15 +212,6 @@
 
 <h1>🧠Quiz</h1>
 
-<div id="jsonInputContainer">
-  <textarea id="jsonInput" placeholder="Paste your JSON questions here..."></textarea>
-  <button id="addQuestionsBtn">➕ Add Questions</button>
-  <button id="copyExampleBtn">📋 Copy Example & Prompt</button>
-  <p style="font-size: 0.9rem; color: #555; text-align: center; margin-top: 10px;">
-    Paste your AI-generated questions JSON in the box above, then click "Add Questions" to start the quiz.<br>
-    Use the "Copy Example & Prompt" button to get a ready-to-use example and prompt for AI.
-  </p>
-</div>
 
 <div id="mainContent">
   <div id="quiz"></div>
@@ -232,6 +223,18 @@
 <div id="result"></div>
 
 <audio id="audioPlayer" preload="auto"></audio>
+
+<div id="jsonInputContainer">
+  <textarea id="jsonInput" placeholder="Paste your JSON questions here..."></textarea>
+  <button id="addQuestionsBtn">➕ Add Questions</button>
+  <button id="copyExampleBtn">📋 Copy Example & Prompt</button>
+  <p style="font-size: 0.9rem; color: #555; text-align: center; margin-top: 10px;">
+    Paste your AI-generated questions JSON in the box above, then click "Add Questions" to start the quiz.<br>
+    Use the "Copy Example & Prompt" button to get a ready-to-use example and prompt for AI.
+  </p>
+</div>
+
+
 
 <script>
   let questions = [];
